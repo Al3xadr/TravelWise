@@ -9,21 +9,19 @@
 /* Begin PBXBuildFile section */
 		18789EDE2A6E6044007BEEC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18789EDD2A6E6044007BEEC2 /* AppDelegate.swift */; };
 		18789EE02A6E6044007BEEC2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18789EDF2A6E6044007BEEC2 /* SceneDelegate.swift */; };
-		18789EE22A6E6044007BEEC2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18789EE12A6E6044007BEEC2 /* ViewController.swift */; };
-		18789EE52A6E6044007BEEC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18789EE32A6E6044007BEEC2 /* Main.storyboard */; };
 		18789EE72A6E6045007BEEC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18789EE62A6E6045007BEEC2 /* Assets.xcassets */; };
 		18789EEA2A6E6045007BEEC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18789EE82A6E6045007BEEC2 /* LaunchScreen.storyboard */; };
+		18789EF62A6E6751007BEEC2 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18789EF52A6E6751007BEEC2 /* LoginVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		18789EDA2A6E6044007BEEC2 /* TravelWise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelWise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18789EDD2A6E6044007BEEC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18789EDF2A6E6044007BEEC2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		18789EE12A6E6044007BEEC2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		18789EE42A6E6044007BEEC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18789EE62A6E6045007BEEC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18789EE92A6E6045007BEEC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18789EEB2A6E6045007BEEC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18789EF52A6E6751007BEEC2 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +54,54 @@
 		18789EDC2A6E6044007BEEC2 /* TravelWise */ = {
 			isa = PBXGroup;
 			children = (
-				18789EDD2A6E6044007BEEC2 /* AppDelegate.swift */,
-				18789EDF2A6E6044007BEEC2 /* SceneDelegate.swift */,
-				18789EE12A6E6044007BEEC2 /* ViewController.swift */,
-				18789EE32A6E6044007BEEC2 /* Main.storyboard */,
-				18789EE62A6E6045007BEEC2 /* Assets.xcassets */,
-				18789EE82A6E6045007BEEC2 /* LaunchScreen.storyboard */,
+				18789EF32A6E66B2007BEEC2 /* App */,
+				18789EF12A6E6666007BEEC2 /* Controllers */,
+				18789EF42A6E66BB007BEEC2 /* Support */,
 				18789EEB2A6E6045007BEEC2 /* Info.plist */,
 			);
 			path = TravelWise;
+			sourceTree = "<group>";
+		};
+		18789EF12A6E6666007BEEC2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				18789EF72A6E69D9007BEEC2 /* LoginVC */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		18789EF32A6E66B2007BEEC2 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				18789EDD2A6E6044007BEEC2 /* AppDelegate.swift */,
+				18789EDF2A6E6044007BEEC2 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		18789EF42A6E66BB007BEEC2 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				18789EE82A6E6045007BEEC2 /* LaunchScreen.storyboard */,
+				18789EE62A6E6045007BEEC2 /* Assets.xcassets */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		18789EF72A6E69D9007BEEC2 /* LoginVC */ = {
+			isa = PBXGroup;
+			children = (
+				18789EF82A6E69E6007BEEC2 /* LoginViewModel */,
+				18789EF52A6E6751007BEEC2 /* LoginVC.swift */,
+			);
+			path = LoginVC;
+			sourceTree = "<group>";
+		};
+		18789EF82A6E69E6007BEEC2 /* LoginViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LoginViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +164,6 @@
 			files = (
 				18789EEA2A6E6045007BEEC2 /* LaunchScreen.storyboard in Resources */,
 				18789EE72A6E6045007BEEC2 /* Assets.xcassets in Resources */,
-				18789EE52A6E6044007BEEC2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +174,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18789EE22A6E6044007BEEC2 /* ViewController.swift in Sources */,
 				18789EDE2A6E6044007BEEC2 /* AppDelegate.swift in Sources */,
 				18789EE02A6E6044007BEEC2 /* SceneDelegate.swift in Sources */,
+				18789EF62A6E6751007BEEC2 /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		18789EE32A6E6044007BEEC2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				18789EE42A6E6044007BEEC2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		18789EE82A6E6045007BEEC2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -291,7 +319,6 @@
 				INFOPLIST_FILE = TravelWise/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -321,7 +348,6 @@
 				INFOPLIST_FILE = TravelWise/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
