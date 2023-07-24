@@ -6,7 +6,7 @@
 //
 
 import UIKit
-class RegisterViewModel {
+final class RegisterViewModel {
     func isValidFirstName(_ firstName: String) -> Bool {
         return !firstName.isEmpty
     }

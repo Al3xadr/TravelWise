@@ -6,8 +6,6 @@
 //
 
 import UIKit
-
-
 final class LoginViewController: UIViewController, UITextFieldDelegate {
     private let validViewModel = ValidLoginVCViewModel()
     private let realmManager = RealmManager()
@@ -18,12 +16,12 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     }()
     
     private let emailOrPhoneNumberTextField: LoginAndPasswordTextField = {
-        let textField = LoginAndPasswordTextField(placeholder: "Электронная почта или номер телефона")
+        let textField = LoginAndPasswordTextField(placeholder: "Почта или телефон:")
         return textField
     }()
     
     private let passwordTextField: LoginAndPasswordTextField = {
-        let textField = LoginAndPasswordTextField(placeholder: "Пароль")
+        let textField = LoginAndPasswordTextField(placeholder: "Пароль:")
         textField.isSecureTextEntry = true
         return textField
     }()
@@ -48,6 +46,7 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     
 }
 
+//MARK: - #selector button 
 private extension LoginViewController {
     @objc func handleRegistration() {
         let registerVC = RegisterViewController()
@@ -75,7 +74,7 @@ private extension LoginViewController {
         }
     }
 }
-
+//MARK: - setupUI()
 private extension LoginViewController {
     private func setupUI() {
         view.backgroundColor = .white

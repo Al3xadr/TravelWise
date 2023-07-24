@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController {
+final class RegisterViewController: UIViewController {
     private let realmManager = RealmManager()
     private let registerViewModel = RegisterViewModel()
     private let firstNameLabel: RegisterLabel = {
@@ -76,6 +76,7 @@ class RegisterViewController: UIViewController {
     }
 }
 
+//MARK: - #selector Register users
 extension RegisterViewController {
     @objc func handleRegistration() {
         guard let firstName = firstNameTextField.text,
@@ -83,7 +84,6 @@ extension RegisterViewController {
               let phoneNumber = phoneNumberTextField.text,
               let email = emailTextField.text,
               let password = passwordTextField.text else {
-            // Один из текстовых полей пустой, обработаем ошибку
             AlertHelper.showAlert(in: self, withTitle: "Ошибка", message: "Пожалуйста, заполните все поля")
             return
         }
@@ -94,64 +94,15 @@ extension RegisterViewController {
         if registrationSuccess {
             let homeViewController = HomeViewController()
             homeViewController.modalPresentationStyle = .fullScreen
-            homeViewController.isModalInPresentation = true // Запрещаем сворачивание контроллера свайпом
+            homeViewController.isModalInPresentation = true
             present(homeViewController, animated: true, completion: nil)
         } else {
-            // If there was an error during registration, show an alert
             AlertHelper.showAlert(in: self, withTitle: "Error", message: "An error occurred during registration.")
         }
     }
 }
 
-//MARK: - TextFieldDelegate
-extension RegisterViewController: UITextFieldDelegate {
-    func delegateTextField() {
-        firstNameTextField.delegate = self
-        lastNameTextField.delegate = self
-        phoneNumberTextField.delegate = self
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
-    }
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        switch textField {
-        case firstNameTextField:
-            let updatedText = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? ""
-            let isValid = registerViewModel.isValidFirstName(updatedText)
-            if !isValid {
-                AlertHelper.showAlert(in: self, withTitle: "Ошибка", message: "Введите корректное имя")
-            }
-        case lastNameTextField:
-            let updatedText = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? ""
-            let isValid = registerViewModel.isValidLastName(updatedText)
-            if !isValid {
-                AlertHelper.showAlert(in: self, withTitle: "Ошибка", message: "Введите корректную Фамилию")
-            }
-        case phoneNumberTextField:
-            let updatedText = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? ""
-            let isValid = registerViewModel.isValidPhoneNumber(updatedText)
-            if !isValid {
-                AlertHelper.showAlert(in: self, withTitle: "Ошибка", message: "Введите корректный номер")
-            }
-        case emailTextField:
-            let updatedText = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? ""
-            let isValid = registerViewModel.isValidEmail(updatedText)
-            if !isValid {
-                AlertHelper.showAlert(in: self, withTitle: "Ошибка", message: "Введите корректный email")
-            }
-        case passwordTextField:
-            let updatedText = (textField.text as NSString?)?.replacingCharacters(in: range, with: string) ?? ""
-            let isValid = registerViewModel.isValidPassword(updatedText)
-            if !isValid {
-                AlertHelper.showAlert(in: self, withTitle: "Ошибка", message: "Введите корректный пароль")
-            }
-        default:
-            break
-        }
-        
-        return true
-    }
-}
-
+//MARK: - setupUI()
 private extension RegisterViewController {
     private func setupUI() {
         let stackView = UIStackView(arrangedSubviews: [firstNameLabel, firstNameTextField, lastNameLabel, lastNameTextField, phoneNumberLabel, phoneNumberTextField, emailLabel, emailTextField, passwordLabel, passwordTextField])
