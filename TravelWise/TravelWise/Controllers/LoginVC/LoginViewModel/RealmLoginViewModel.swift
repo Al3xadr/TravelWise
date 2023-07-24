@@ -8,20 +8,21 @@
 import UIKit
 
 final class RealmLoginViewModel {
-    let realmManager: RealmManager // Add this property to hold the RealmManager instance
+    let realmManager: RealmManager 
     
     init(realmManager: RealmManager) {
         self.realmManager = realmManager
     }
+//MARK: - User login and password verification
     func loginUser(emailOrPhone: String, password: String, completion: @escaping (Bool) -> Void) {
         if let user = realmManager.findUserByEmailOrPhoneNumber(emailOrPhoneNumber: emailOrPhone) {
             if user.password == password {
-                completion(true) // Вход успешен
+                completion(true)
             } else {
-                completion(false) // Неверный пароль
+                completion(false)
             }
         } else {
-            completion(false) // Пользователь не найден
+            completion(false)
         }
     }
 }
