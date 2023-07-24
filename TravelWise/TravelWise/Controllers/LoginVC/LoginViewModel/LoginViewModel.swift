@@ -1,12 +1,12 @@
 //
-//  ValidViewModel.swift
+//  LoginViewModel.swift
 //  TravelWise
 //
 //  Created by apple on 24.07.2023.
 //
 
 import UIKit
-class ValidLoginVCViewModel {
+final class ValidLoginVCViewModel {
     var emailOrPhoneNumber: String = "aa@mail.ru"
     var password: String = "12345RU"
     

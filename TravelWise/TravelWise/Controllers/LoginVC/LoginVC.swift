@@ -8,53 +8,41 @@
 import UIKit
 
 
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController, UITextFieldDelegate {
     private let validViewModel = ValidLoginVCViewModel()
-    
-    
-    private let ballImage: UIImageView = {
-        let image = UIImageView()
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(named: "ball")
-        image.contentMode = .scaleToFill
+    private let realmManager = RealmManager()
+    private var realmLoginViewModel: RealmLoginViewModel?
+    private let ballImage: ImageBall = {
+        let image = ImageBall()
         return image
     }()
     
-    private let emailOrPhoneNumberTextField: UITextField = {
-        let textField = UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.placeholder = "Электронная почта или номер телефона"
-        textField.borderStyle = .roundedRect
+    private let emailOrPhoneNumberTextField: LoginAndPasswordTextField = {
+        let textField = LoginAndPasswordTextField(placeholder: "Электронная почта или номер телефона")
         return textField
     }()
     
-    private let passwordTextField: UITextField = {
-        let textField = UITextField()
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.placeholder = "Пароль"
-        textField.borderStyle = .roundedRect
+    private let passwordTextField: LoginAndPasswordTextField = {
+        let textField = LoginAndPasswordTextField(placeholder: "Пароль")
         textField.isSecureTextEntry = true
         return textField
     }()
     
-    private let registrationButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Регистрация", for: .normal)
+    private let registrationButton: LoginButton = {
+        let button = LoginButton(title: "Регистрация")
         button.addTarget(self, action: #selector(handleRegistration), for: .touchUpInside)
         return button
     }()
     
-    private let loginButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Вход", for: .normal)
+    private let loginButton: LoginButton = {
+        let button = LoginButton(title: "Вход")
         button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         return button
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        realmLoginViewModel = RealmLoginViewModel(realmManager: realmManager)
         setupUI()
     }
     
@@ -62,38 +50,29 @@ class LoginViewController: UIViewController {
 
 private extension LoginViewController {
     @objc func handleRegistration() {
-        switch (validViewModel.isValidEmailOrPhoneNumber(), validViewModel.isValidPassword()) {
-        case (true, true):
-            // Пользователь ввел корректные данные, выполните регистрацию
-            print("Регистрация прошла успешно")
-        case (false, true):
-            showError(message: "Введите корректный адрес электронной почты или номер телефона")
-        case (true, false):
-            showError(message: "Введите корректный пароль (не менее 6 символов, должен содержать хотя бы одну цифру и одну букву)")
-        case (false, false):
-            showError(message: "Введите корректные данные")
-        }
-        print("registrator")
+        let registerVC = RegisterViewController()
+        let navigationController = UINavigationController(rootViewController: registerVC)
+        present(navigationController, animated: true, completion: nil)
     }
     
-    @objc func handleLogin() {
-        switch (validViewModel.isValidEmailOrPhoneNumber(), validViewModel.isValidPassword()) {
-        case (true, true):
-            print("Вход выполнен успешно")
-        case (false, true):
-            showError(message: "Введите корректный адрес электронной почты или номер телефона")
-        case (true, false):
-            showError(message: "Введите корректный пароль (не менее 6 символов, должен содержать хотя бы одну цифру и одну букву)")
-        case (false, false):
-            showError(message: "Введите корректные данные")
+    @objc private func handleLogin() {
+        guard let emailOrPhone = emailOrPhoneNumberTextField.text,
+              let password = passwordTextField.text else {
+            AlertHelper.showAlert(in: self, withTitle: "Ошибка", message: "Пожалуйста, заполните все поля")
+            return
         }
-        print("login")
-
-    }
-    func showError(message: String) {
-        let alert = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        present(alert, animated: true, completion: nil)
+        
+        realmLoginViewModel?.loginUser(emailOrPhone: emailOrPhone, password: password)
+        { [weak self] success in
+            if success {
+                let homeViewController = HomeViewController()
+                homeViewController.modalPresentationStyle = .fullScreen
+                homeViewController.isModalInPresentation = true
+                self?.present(homeViewController, animated: true, completion: nil)
+            } else {
+                AlertHelper.showAlert(in: LoginViewController(), withTitle: "Ошибка", message: "Неверный пароль или пользователь не найден")
+            }
+        }
     }
 }
 
@@ -125,11 +104,12 @@ private extension LoginViewController {
             registrationButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 30),
             registrationButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             registrationButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            
         ])
         NSLayoutConstraint.activate([
             loginButton.topAnchor.constraint(equalTo: registrationButton.bottomAnchor, constant: 20),
             loginButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-            loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30)
+            loginButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
         ])
     }
 }
