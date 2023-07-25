@@ -55,7 +55,11 @@ private extension LoginViewController {
     }
     
     @objc private func handleLogin() {
-        guard let emailOrPhone = emailOrPhoneNumberTextField.text,
+        let homeViewController = HomeViewController()
+        homeViewController.modalPresentationStyle = .fullScreen
+        homeViewController.isModalInPresentation = true
+        self.present(homeViewController, animated: true, completion: nil)
+       /* guard let emailOrPhone = emailOrPhoneNumberTextField.text,
               let password = passwordTextField.text else {
             AlertHelper.showAlert(in: self, withTitle: "Ошибка", message: "Пожалуйста, заполните все поля")
             return
@@ -71,7 +75,7 @@ private extension LoginViewController {
             } else {
                 AlertHelper.showAlert(in: LoginViewController(), withTitle: "Ошибка", message: "Неверный пароль или пользователь не найден")
             }
-        }
+        }*/
     }
 }
 //MARK: - setupUI()
