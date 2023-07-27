@@ -24,7 +24,7 @@ struct CountryResponse: Codable {
     let subregion: String?
     let languages: [String: String]?
     let translations: [String: Translation]
-    let latlng: [Double]
+    let latlng: [Double]?
     let landlocked: Bool
     let area: Double
     let demonyms: Demonyms?
@@ -363,3 +363,4 @@ enum Status: String, Codable {
     case officiallyAssigned = "officially-assigned"
     case userAssigned = "user-assigned"
 }
+
