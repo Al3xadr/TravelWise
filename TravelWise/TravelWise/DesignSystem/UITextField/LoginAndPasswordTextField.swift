@@ -11,7 +11,7 @@ final class LoginAndPasswordTextField: UITextField {
     init(placeholder: String) {
         super.init(frame: .zero)
         
-        translatesAutoresizingMaskIntoConstraints = false
+        self.translatesAutoresizingMaskIntoConstraints = false
         self.placeholder = placeholder
         borderStyle = .roundedRect
     }
