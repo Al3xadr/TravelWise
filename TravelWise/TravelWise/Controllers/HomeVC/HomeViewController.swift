@@ -7,18 +7,15 @@
 
 import UIKit
 import MultiSlider
+import CoreML
 final class HomeViewController: UIViewController {
-    
-    // MARK: - Properties
-    
-    var userData = UserData()
-    
+    private let viewModel = HomeViewModelML()
+    private let interestsData = ConstantsHomeVC.interestsData
     // MARK: - UI Elements
-    
-    private let interestsLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Interests:"
-        label.translatesAutoresizingMaskIntoConstraints = false
+    private var selectedRating: Int = 0
+    private var selectedInterests: [String] = []
+    private let interestsLabel: HomeVCLabel = {
+        let label = HomeVCLabel(text: " Interests: ")
         return label
     }()
     private let interestsCollectionView: UICollectionView = {
@@ -28,27 +25,18 @@ final class HomeViewController: UIViewController {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()
-    private let interestsData = ["Sports", "Culture", "Nature", "Technology", "Food", "Travel", "Party", "Sight", "Sea", "Ocean", "Beach zones"]
-    private var selectedInterests: [String] = []
-    
-    private let budgetLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Budget:"
-        label.translatesAutoresizingMaskIntoConstraints = false
+    private let budgetLabel: HomeVCLabel = {
+        let label = HomeVCLabel(text: " Budget: ")
         return label
     }()
     
-    private let housingLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Preferred Housing:"
-        label.translatesAutoresizingMaskIntoConstraints = false
+    private let housingLabel: HomeVCLabel = {
+        let label = HomeVCLabel(text: " Preferred Housing: ")
         return label
     }()
     
-    private let occupationLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Occupation:"
-        label.translatesAutoresizingMaskIntoConstraints = false
+    private let occupationLabel: HomeVCLabel = {
+        let label = HomeVCLabel(text: " Occupation: ")
         return label
     }()
     
@@ -60,30 +48,32 @@ final class HomeViewController: UIViewController {
         return stackView
     }()
     
-    private let budgetSlider: MultiSlider = {
-        let slider = MultiSlider()
+    private let budgetSlider: UISlider = {
+        let slider = UISlider()
         slider.minimumValue = 0
-        slider.maximumValue = 100
-        slider.orientation = .horizontal
-        slider.value = [0, 100] // Значения по умолчанию для начального диапазона
+        slider.maximumValue = 10
         slider.translatesAutoresizingMaskIntoConstraints = false
+        slider.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
         return slider
     }()
-    
     private let housingSegmentedControl: UISegmentedControl = {
-        let items = ["Apartment", "House", "Hotel", "Villa"]
+        let items = ConstantsHomeVC.itemsSegmentedControl
         let segmentedControl = UISegmentedControl(items: items)
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         return segmentedControl
     }()
     
-    private let occupationTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "Enter your occupation"
-        textField.borderStyle = .roundedRect
-        textField.translatesAutoresizingMaskIntoConstraints = false
+    private let occupationTextField: LoginAndPasswordTextField = {
+        let textField = LoginAndPasswordTextField(placeholder: "Job or travel")
         return textField
+    }()
+    private let starRatingView: RatingStarsView = {
+        let star = RatingStarsView()
+        star.translatesAutoresizingMaskIntoConstraints = false
+        star.contentMode = .scaleAspectFit
+        star.rating = 3
+        return star
     }()
     
     private let saveButton: UIButton = {
@@ -93,34 +83,98 @@ final class HomeViewController: UIViewController {
         button.backgroundColor = .blue
         button.layer.cornerRadius = 8
         button.translatesAutoresizingMaskIntoConstraints = false
-
+        button.addTarget(self, action: #selector(saveButtonTapped(_:)), for: .touchUpInside)
         return button
     }()
     
-    
-    // MARK: - Lifecycle
-    
+// MARK: - viewDidLoad()
     override func viewDidLoad() {
         super.viewDidLoad()
-        interestsCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        interestsCollectionView.dataSource = self
-        interestsCollectionView.delegate = self
-        interestsCollectionView.register(InterestCollectionViewCell.self, forCellWithReuseIdentifier: "InterestCell")
-        saveButton.addTarget(self, action: #selector(saveButtonTapped(_:)), for: .touchUpInside)
         setupUI()
+        settingCollection()
+        starRatingView.ratingDidChange = { [weak self] rating in
+            self?.selectedRating = rating
+        }
+        
+    }
+}
+
+private extension HomeViewController {
+    @objc func sliderValueChanged(_ slider: MultiSlider) {
+        updateSliderValueLabel()
     }
     
+    func updateSliderValueLabel() {
+        let currentValue = Int(budgetSlider.value)
+        budgetLabel.text = "Budget: \(currentValue)000 $"
+    }
     // MARK: - Actions
     
     @objc private func saveButtonTapped(_ sender: UIButton) {
         collectUserData()
-        printCollectedData()
-        nextVC()
+    }
+}
+private extension HomeViewController {
+    func collectUserData() {
+        let budget = Double(budgetSlider.value)
+        let preferredHousing = String(housingSegmentedControl.selectedSegmentIndex)
+        let interests = selectedInterests.joined(separator: " ")
+        let rating = Double(selectedRating)
+        let recommendedCountries = viewModel.collectUserData(interests: interests, budget: budget, preferredHousing: preferredHousing, rating: rating)
+        print(recommendedCountries)
+        nextVC(recommendedCountries: recommendedCountries)
+    }
+    func nextVC(recommendedCountries: String) {
+        let nextViewController = RecommendationViewController()
+        nextViewController.recommendedCountries = recommendedCountries
+        present(nextViewController, animated: true)
     }
     
-    // MARK: - Helper Methods
+}
+//MARK: - settingCollectionView
+private extension HomeViewController {
+    func settingCollection() {
+        interestsCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        interestsCollectionView.dataSource = self
+        interestsCollectionView.delegate = self
+        interestsCollectionView.register(InterestCollectionViewCell.self, forCellWithReuseIdentifier: "InterestCell")
+    }
     
-    private func setupUI() {
+}
+//MARK: - UICollectionViewDataSource and UICollectionViewDelegateFlowLayout,  UICollectionViewDelegate
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return interestsData.count
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let interest = interestsData[indexPath.item]
+        let textWidth = collectionView.bounds.width - 20
+        let textHeight = interest.height(withConstrainedWidth: textWidth, font: UIFont.systemFont(ofSize: 17))
+        return CGSize(width: textWidth, height: textHeight + 20)
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "InterestCell", for: indexPath) as! InterestCollectionViewCell
+        let interest = interestsData[indexPath.item]
+        cell.configure(with: interest)
+        cell.isSelectedItem = selectedInterests.contains(interest)
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedInterest = interestsData[indexPath.item]
+        if selectedInterests.contains(selectedInterest) {
+            selectedInterests.removeAll { $0 == selectedInterest }
+        } else {
+            selectedInterests.append(selectedInterest)
+        }
+        collectionView.reloadItems(at: [indexPath])
+    }
+}
+
+//MARK: - SetupUI
+extension HomeViewController {
+    func setupUI() {
         view.backgroundColor = .white
         view.addSubview(interestsLabel)
         view.addSubview(interestsCollectionView)
@@ -131,6 +185,7 @@ final class HomeViewController: UIViewController {
         view.addSubview(housingSegmentedControl)
         view.addSubview(occupationLabel)
         view.addSubview(occupationTextField)
+        view.addSubview(starRatingView)
         view.addSubview(saveButton)
         
         NSLayoutConstraint.activate([
@@ -153,7 +208,6 @@ final class HomeViewController: UIViewController {
             budgetLabel.topAnchor.constraint(equalTo: interestsCategoriesStackView.bottomAnchor, constant: 20),
             budgetLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20)
         ])
-        
         NSLayoutConstraint.activate([
             budgetSlider.topAnchor.constraint(equalTo: budgetLabel.bottomAnchor, constant: 10),
             budgetSlider.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
@@ -168,7 +222,8 @@ final class HomeViewController: UIViewController {
         NSLayoutConstraint.activate([
             housingSegmentedControl.topAnchor.constraint(equalTo: housingLabel.bottomAnchor, constant: 10),
             housingSegmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            housingSegmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+            housingSegmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            housingSegmentedControl.heightAnchor.constraint(equalToConstant: 40)
         ])
         
         NSLayoutConstraint.activate([
@@ -181,110 +236,15 @@ final class HomeViewController: UIViewController {
             occupationTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             occupationTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
-        
         NSLayoutConstraint.activate([
-            saveButton.topAnchor.constraint(equalTo: occupationTextField.bottomAnchor, constant: 20),
+            starRatingView.topAnchor.constraint(equalTo: occupationTextField.bottomAnchor, constant: 20),
+            starRatingView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+        ])
+        NSLayoutConstraint.activate([
+            saveButton.topAnchor.constraint(equalTo: starRatingView.bottomAnchor, constant: 50),
             saveButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             saveButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             saveButton.heightAnchor.constraint(equalToConstant: 50)
         ])
-    }
-    private func nextVC() {
-        let nextViewController = RecommendationViewController()
-        present(nextViewController, animated: true)
-    }
-    private func collectUserData() {
-        userData.interests = selectedInterests
-        let minValue = Int(budgetSlider.value[0])
-        let maxValue = Int(budgetSlider.value[1])
-        userData.budget = [minValue, maxValue]
-        
-        let selectedHousingIndex = housingSegmentedControl.selectedSegmentIndex
-        userData.preferredHousing = PreferredHousing(rawValue: selectedHousingIndex) ?? .apartment
-        
-        userData.occupation = occupationTextField.text
-    }
-    
-    private func printCollectedData() {
-        print("interests: \(userData.interests)")
-        print("Budget: \(userData.budget)")
-        print("Preferred Housing: \(userData.preferredHousing.rawValue)")
-        print("Occupation: \(userData.occupation ?? "N/A")")
-        
-        // Additional code to print the selected interests
-        print("Selected Interests:")
-        for selectedInterest in selectedInterests {
-            print(selectedInterest)
-        }
-    }
-}
-struct UserData {
-    var interests: [String] = []
-    var budget: [Int] = []
-    var preferredHousing: PreferredHousing = .apartment
-    var occupation: String?
-}
-
-
-// Enum to represent preferred housing types
-enum PreferredHousing: Int {
-    case apartment
-    case house
-    case hotel
-    case villa
-}
-
-// Helper extension to safely access an array element
-extension Array {
-    subscript(safe index: Int) -> Element? {
-        return indices.contains(index) ? self[index] : nil
-    }
-}
-
-
-extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return interestsData.count
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let interest = interestsData[indexPath.item]
-        let textWidth = collectionView.bounds.width - 20 // Adjust the width as needed
-        let textHeight = interest.height(withConstrainedWidth: textWidth, font: UIFont.systemFont(ofSize: 17)) // Use the appropriate font size
-        return CGSize(width: textWidth, height: textHeight + 20) // Add some extra height for padding
-    }
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "InterestCell", for: indexPath) as! InterestCollectionViewCell
-        let interest = interestsData[indexPath.item]
-        cell.configure(with: interest)
-        
-        // Set the isSelectedItem property based on the selectedInterests array
-        cell.isSelectedItem = selectedInterests.contains(interest)
-        
-        return cell
-    }
-    
-    // MARK: - UICollectionViewDelegate
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let selectedInterest = interestsData[indexPath.item]
-        
-        if selectedInterests.contains(selectedInterest) {
-            // If the interest is already in selectedInterests, remove it to deselect the cell
-            selectedInterests.removeAll { $0 == selectedInterest }
-        } else {
-            // If the interest is not in selectedInterests, add it to select the cell
-            selectedInterests.append(selectedInterest)
-        }
-        
-        // Reload the selected cell to update its appearance
-        collectionView.reloadItems(at: [indexPath])
-    }
-}
-
-extension String {
-    func height(withConstrainedWidth width: CGFloat, font: UIFont) -> CGFloat {
-        let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
-        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [.font: font], context: nil)
-        return ceil(boundingBox.height)
     }
 }

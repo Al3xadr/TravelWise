@@ -41,7 +41,11 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         realmLoginViewModel = RealmLoginViewModel(realmManager: realmManager)
+
         setupUI()
+        
+
+        
     }
     
 }
