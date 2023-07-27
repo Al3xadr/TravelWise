@@ -18,6 +18,9 @@
 		189B64212A71529000EB89C2 /* HomeViewModelML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B64202A71529000EB89C2 /* HomeViewModelML.swift */; };
 		189B64242A7154BB00EB89C2 /* StaticHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B64232A7154BB00EB89C2 /* StaticHomeVC.swift */; };
 		189B64262A7159AC00EB89C2 /* HomeVCLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B64252A7159AC00EB89C2 /* HomeVCLabel.swift */; };
+		189B64292A72548900EB89C2 /* RecommendationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B64282A72548900EB89C2 /* RecommendationViewModel.swift */; };
+		189B642C2A7255A100EB89C2 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B642B2A7255A100EB89C2 /* NetworkService.swift */; };
+		189B642F2A72588200EB89C2 /* ModelCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B642E2A72588200EB89C2 /* ModelCountry.swift */; };
 		18B5878C2A6EC96C002815B5 /* InterestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5878B2A6EC96C002815B5 /* InterestCollectionViewCell.swift */; };
 		18B5878F2A6FAE34002815B5 /* MultiSlider in Frameworks */ = {isa = PBXBuildFile; productRef = 18B5878E2A6FAE34002815B5 /* MultiSlider */; };
 		18B587922A6FB219002815B5 /* RecommendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B587912A6FB219002815B5 /* RecommendationViewController.swift */; };
@@ -52,6 +55,9 @@
 		189B64202A71529000EB89C2 /* HomeViewModelML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelML.swift; sourceTree = "<group>"; };
 		189B64232A7154BB00EB89C2 /* StaticHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticHomeVC.swift; sourceTree = "<group>"; };
 		189B64252A7159AC00EB89C2 /* HomeVCLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCLabel.swift; sourceTree = "<group>"; };
+		189B64282A72548900EB89C2 /* RecommendationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationViewModel.swift; sourceTree = "<group>"; };
+		189B642B2A7255A100EB89C2 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		189B642E2A72588200EB89C2 /* ModelCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCountry.swift; sourceTree = "<group>"; };
 		18B5878B2A6EC96C002815B5 /* InterestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestCollectionViewCell.swift; sourceTree = "<group>"; };
 		18B587912A6FB219002815B5 /* RecommendationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationViewController.swift; sourceTree = "<group>"; };
 		18EEA37E2A6E7C7800355343 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
@@ -102,6 +108,8 @@
 		18789EDC2A6E6044007BEEC2 /* TravelWise */ = {
 			isa = PBXGroup;
 			children = (
+				189B642D2A72587400EB89C2 /* ModelCountry */,
+				189B642A2A72558F00EB89C2 /* NetworkService */,
 				189B641C2A71518900EB89C2 /* Extension */,
 				18EEA37B2A6E7C2800355343 /* DesignSystem */,
 				18EEA3AD2A6E9FAD00355343 /* RealmManager */,
@@ -185,6 +193,30 @@
 			path = Static;
 			sourceTree = "<group>";
 		};
+		189B64272A72546700EB89C2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				189B64282A72548900EB89C2 /* RecommendationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		189B642A2A72558F00EB89C2 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				189B642B2A7255A100EB89C2 /* NetworkService.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		189B642D2A72587400EB89C2 /* ModelCountry */ = {
+			isa = PBXGroup;
+			children = (
+				189B642E2A72588200EB89C2 /* ModelCountry.swift */,
+			);
+			path = ModelCountry;
+			sourceTree = "<group>";
+		};
 		18B5878A2A6EC94B002815B5 /* CollectionCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +228,7 @@
 		18B587902A6FB1F1002815B5 /* RecommendationVC */ = {
 			isa = PBXGroup;
 			children = (
+				189B64272A72546700EB89C2 /* ViewModel */,
 				18B587912A6FB219002815B5 /* RecommendationViewController.swift */,
 			);
 			path = RecommendationVC;
@@ -409,8 +442,11 @@
 				18EEA3B62A6EB7F000355343 /* RealmLoginViewModel.swift in Sources */,
 				18EEA3992A6E881000355343 /* RegisterUILabel.swift in Sources */,
 				18EEA3852A6E7F3300355343 /* ImageBall.swift in Sources */,
+				189B642F2A72588200EB89C2 /* ModelCountry.swift in Sources */,
 				18EEA3812A6E7C8B00355343 /* LoginAndPasswordTextField.swift in Sources */,
+				189B64292A72548900EB89C2 /* RecommendationViewModel.swift in Sources */,
 				18789EF62A6E6751007BEEC2 /* LoginVC.swift in Sources */,
+				189B642C2A7255A100EB89C2 /* NetworkService.swift in Sources */,
 				18EEA3B12A6EA5B000355343 /* RealmRegisterViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
