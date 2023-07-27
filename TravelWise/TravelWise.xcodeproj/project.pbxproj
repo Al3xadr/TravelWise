@@ -21,8 +21,14 @@
 		189B64292A72548900EB89C2 /* RecommendationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B64282A72548900EB89C2 /* RecommendationViewModel.swift */; };
 		189B642C2A7255A100EB89C2 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B642B2A7255A100EB89C2 /* NetworkService.swift */; };
 		189B642F2A72588200EB89C2 /* ModelCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B642E2A72588200EB89C2 /* ModelCountry.swift */; };
+		189B64362A729AAD00EB89C2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 189B64352A729AAD00EB89C2 /* Kingfisher */; };
+		189B64392A729ABE00EB89C2 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 189B64382A729ABE00EB89C2 /* Realm */; };
+		189B643B2A729ABE00EB89C2 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 189B643A2A729ABE00EB89C2 /* RealmSwift */; };
+		189B64442A72C00C00EB89C2 /* StaticRecommendationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B64432A72C00C00EB89C2 /* StaticRecommendationVC.swift */; };
+		189B64462A72CDDA00EB89C2 /* RecommendationUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B64452A72CDDA00EB89C2 /* RecommendationUILabel.swift */; };
+		189B64492A72CFF100EB89C2 /* RecommendationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B64482A72CFF100EB89C2 /* RecommendationModel.swift */; };
+		189B644C2A72D17800EB89C2 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B644B2A72D17800EB89C2 /* InfoViewController.swift */; };
 		18B5878C2A6EC96C002815B5 /* InterestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5878B2A6EC96C002815B5 /* InterestCollectionViewCell.swift */; };
-		18B5878F2A6FAE34002815B5 /* MultiSlider in Frameworks */ = {isa = PBXBuildFile; productRef = 18B5878E2A6FAE34002815B5 /* MultiSlider */; };
 		18B587922A6FB219002815B5 /* RecommendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B587912A6FB219002815B5 /* RecommendationViewController.swift */; };
 		18EEA37F2A6E7C7800355343 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEA37E2A6E7C7800355343 /* LoginButton.swift */; };
 		18EEA3812A6E7C8B00355343 /* LoginAndPasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEA3802A6E7C8B00355343 /* LoginAndPasswordTextField.swift */; };
@@ -33,8 +39,6 @@
 		18EEA39F2A6E8F2E00355343 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEA39E2A6E8F2E00355343 /* AlertHelper.swift */; };
 		18EEA3A22A6E90DF00355343 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEA3A12A6E90DF00355343 /* LoginViewModel.swift */; };
 		18EEA3A62A6E947500355343 /* RealmModelUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEA3A52A6E947500355343 /* RealmModelUsers.swift */; };
-		18EEA3A92A6E9F2F00355343 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 18EEA3A82A6E9F2F00355343 /* Realm */; };
-		18EEA3AB2A6E9F2F00355343 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 18EEA3AA2A6E9F2F00355343 /* RealmSwift */; };
 		18EEA3AF2A6E9FC000355343 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEA3AE2A6E9FC000355343 /* RealmManager.swift */; };
 		18EEA3B12A6EA5B000355343 /* RealmRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEA3B02A6EA5B000355343 /* RealmRegisterViewModel.swift */; };
 		18EEA3B42A6EA65A00355343 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEA3B32A6EA65A00355343 /* HomeViewController.swift */; };
@@ -58,6 +62,10 @@
 		189B64282A72548900EB89C2 /* RecommendationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationViewModel.swift; sourceTree = "<group>"; };
 		189B642B2A7255A100EB89C2 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		189B642E2A72588200EB89C2 /* ModelCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCountry.swift; sourceTree = "<group>"; };
+		189B64432A72C00C00EB89C2 /* StaticRecommendationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticRecommendationVC.swift; sourceTree = "<group>"; };
+		189B64452A72CDDA00EB89C2 /* RecommendationUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationUILabel.swift; sourceTree = "<group>"; };
+		189B64482A72CFF100EB89C2 /* RecommendationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationModel.swift; sourceTree = "<group>"; };
+		189B644B2A72D17800EB89C2 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		18B5878B2A6EC96C002815B5 /* InterestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestCollectionViewCell.swift; sourceTree = "<group>"; };
 		18B587912A6FB219002815B5 /* RecommendationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationViewController.swift; sourceTree = "<group>"; };
 		18EEA37E2A6E7C7800355343 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
@@ -80,9 +88,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18EEA3AB2A6E9F2F00355343 /* RealmSwift in Frameworks */,
-				18B5878F2A6FAE34002815B5 /* MultiSlider in Frameworks */,
-				18EEA3A92A6E9F2F00355343 /* Realm in Frameworks */,
+				189B643B2A729ABE00EB89C2 /* RealmSwift in Frameworks */,
+				189B64392A729ABE00EB89C2 /* Realm in Frameworks */,
+				189B64362A729AAD00EB89C2 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +134,7 @@
 		18789EF12A6E6666007BEEC2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				189B644A2A72D16500EB89C2 /* InfoVC */,
 				18B587902A6FB1F1002815B5 /* RecommendationVC */,
 				18EEA3B22A6EA64200355343 /* HomeVC */,
 				18EEA3942A6E854C00355343 /* RegisterVC */,
@@ -217,6 +226,30 @@
 			path = ModelCountry;
 			sourceTree = "<group>";
 		};
+		189B64402A72BFC200EB89C2 /* Static */ = {
+			isa = PBXGroup;
+			children = (
+				189B64432A72C00C00EB89C2 /* StaticRecommendationVC.swift */,
+			);
+			path = Static;
+			sourceTree = "<group>";
+		};
+		189B64472A72CFE000EB89C2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				189B64482A72CFF100EB89C2 /* RecommendationModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		189B644A2A72D16500EB89C2 /* InfoVC */ = {
+			isa = PBXGroup;
+			children = (
+				189B644B2A72D17800EB89C2 /* InfoViewController.swift */,
+			);
+			path = InfoVC;
+			sourceTree = "<group>";
+		};
 		18B5878A2A6EC94B002815B5 /* CollectionCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +261,8 @@
 		18B587902A6FB1F1002815B5 /* RecommendationVC */ = {
 			isa = PBXGroup;
 			children = (
+				189B64472A72CFE000EB89C2 /* Model */,
+				189B64402A72BFC200EB89C2 /* Static */,
 				189B64272A72546700EB89C2 /* ViewModel */,
 				18B587912A6FB219002815B5 /* RecommendationViewController.swift */,
 			);
@@ -285,6 +320,7 @@
 			children = (
 				18EEA3982A6E881000355343 /* RegisterUILabel.swift */,
 				189B64252A7159AC00EB89C2 /* HomeVCLabel.swift */,
+				189B64452A72CDDA00EB89C2 /* RecommendationUILabel.swift */,
 			);
 			path = UILabel;
 			sourceTree = "<group>";
@@ -359,9 +395,9 @@
 			);
 			name = TravelWise;
 			packageProductDependencies = (
-				18EEA3A82A6E9F2F00355343 /* Realm */,
-				18EEA3AA2A6E9F2F00355343 /* RealmSwift */,
-				18B5878E2A6FAE34002815B5 /* MultiSlider */,
+				189B64352A729AAD00EB89C2 /* Kingfisher */,
+				189B64382A729ABE00EB89C2 /* Realm */,
+				189B643A2A729ABE00EB89C2 /* RealmSwift */,
 			);
 			productName = TravelWise;
 			productReference = 18789EDA2A6E6044007BEEC2 /* TravelWise.app */;
@@ -392,8 +428,8 @@
 			);
 			mainGroup = 18789ED12A6E6044007BEEC2;
 			packageReferences = (
-				18EEA3A72A6E9F2F00355343 /* XCRemoteSwiftPackageReference "realm-swift" */,
-				18B5878D2A6FAE34002815B5 /* XCRemoteSwiftPackageReference "MultiSlider" */,
+				189B64342A729AAD00EB89C2 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				189B64372A729ABE00EB89C2 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 18789EDB2A6E6044007BEEC2 /* Products */;
 			projectDirPath = "";
@@ -426,6 +462,7 @@
 				18EEA37F2A6E7C7800355343 /* LoginButton.swift in Sources */,
 				18B587922A6FB219002815B5 /* RecommendationViewController.swift in Sources */,
 				18EEA39F2A6E8F2E00355343 /* AlertHelper.swift in Sources */,
+				189B644C2A72D17800EB89C2 /* InfoViewController.swift in Sources */,
 				18EEA3A22A6E90DF00355343 /* LoginViewModel.swift in Sources */,
 				189B64262A7159AC00EB89C2 /* HomeVCLabel.swift in Sources */,
 				18EEA3B42A6EA65A00355343 /* HomeViewController.swift in Sources */,
@@ -434,6 +471,7 @@
 				189B641E2A7151A400EB89C2 /* Extension+String.swift in Sources */,
 				18EEA39C2A6E8C2D00355343 /* RegisterViewModel.swift in Sources */,
 				189B64212A71529000EB89C2 /* HomeViewModelML.swift in Sources */,
+				189B64442A72C00C00EB89C2 /* StaticRecommendationVC.swift in Sources */,
 				18789EDE2A6E6044007BEEC2 /* AppDelegate.swift in Sources */,
 				18B5878C2A6EC96C002815B5 /* InterestCollectionViewCell.swift in Sources */,
 				18789EE02A6E6044007BEEC2 /* SceneDelegate.swift in Sources */,
@@ -448,6 +486,8 @@
 				18789EF62A6E6751007BEEC2 /* LoginVC.swift in Sources */,
 				189B642C2A7255A100EB89C2 /* NetworkService.swift in Sources */,
 				18EEA3B12A6EA5B000355343 /* RealmRegisterViewModel.swift in Sources */,
+				189B64492A72CFF100EB89C2 /* RecommendationModel.swift in Sources */,
+				189B64462A72CDDA00EB89C2 /* RecommendationUILabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,15 +701,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		18B5878D2A6FAE34002815B5 /* XCRemoteSwiftPackageReference "MultiSlider" */ = {
+		189B64342A729AAD00EB89C2 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/yonat/MultiSlider.git";
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
+				minimumVersion = 7.0.0;
 			};
 		};
-		18EEA3A72A6E9F2F00355343 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		189B64372A729ABE00EB89C2 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
@@ -680,19 +720,19 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		18B5878E2A6FAE34002815B5 /* MultiSlider */ = {
+		189B64352A729AAD00EB89C2 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 18B5878D2A6FAE34002815B5 /* XCRemoteSwiftPackageReference "MultiSlider" */;
-			productName = MultiSlider;
+			package = 189B64342A729AAD00EB89C2 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
-		18EEA3A82A6E9F2F00355343 /* Realm */ = {
+		189B64382A729ABE00EB89C2 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 18EEA3A72A6E9F2F00355343 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = 189B64372A729ABE00EB89C2 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = Realm;
 		};
-		18EEA3AA2A6E9F2F00355343 /* RealmSwift */ = {
+		189B643A2A729ABE00EB89C2 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 18EEA3A72A6E9F2F00355343 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = 189B64372A729ABE00EB89C2 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */

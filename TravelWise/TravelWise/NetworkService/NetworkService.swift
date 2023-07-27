@@ -3,7 +3,8 @@
 //  TravelWise
 //
 //  Created by apple on 27.07.2023.
-//
+// API key: 5ae2e3f221c38a28845f05b6e570c73987e20bffab61fd81315fd648
+
 
 import Foundation
 class CountryAPIService {
@@ -11,7 +12,7 @@ class CountryAPIService {
         let baseURLString = "https://restcountries.com/v3.1/name/"
         let url = baseURLString + "\(countryName.lowercased())"
         
-        guard let url = URL(string: baseURLString) else {
+        guard let url = URL(string: url) else {
             completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
             return
         }
