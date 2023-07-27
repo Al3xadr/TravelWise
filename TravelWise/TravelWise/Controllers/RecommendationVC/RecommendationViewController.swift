@@ -8,9 +8,10 @@
 import UIKit
 
 final class RecommendationViewController: UIViewController {
+    let viemodel = RecommendationViewModel()
     var recommendedCountries: String = "" {
         didSet {
-            labelName.text = recommendedCountries
+            labelName.text = recommendedCountries.lowercased()
         }
     }
     private let labelName: UILabel = {
@@ -22,6 +23,7 @@ final class RecommendationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .orange
+        viemodel.fetchDataForCountry(countryName: recommendedCountries)
         setupUI()
     }
 }
