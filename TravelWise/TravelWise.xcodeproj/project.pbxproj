@@ -12,6 +12,28 @@
 		18789EE72A6E6045007BEEC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18789EE62A6E6045007BEEC2 /* Assets.xcassets */; };
 		18789EEA2A6E6045007BEEC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18789EE82A6E6045007BEEC2 /* LaunchScreen.storyboard */; };
 		18789EF62A6E6751007BEEC2 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18789EF52A6E6751007BEEC2 /* LoginVC.swift */; };
+		189B64172A7128C100EB89C2 /* MyTabularClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 189B64162A7128C100EB89C2 /* MyTabularClassifier.mlmodel */; };
+		189B641B2A712D5500EB89C2 /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B641A2A712D5500EB89C2 /* StarRatingView.swift */; };
+		189B641E2A7151A400EB89C2 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B641D2A7151A400EB89C2 /* Extension+String.swift */; };
+		189B64212A71529000EB89C2 /* HomeViewModelML.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B64202A71529000EB89C2 /* HomeViewModelML.swift */; };
+		189B64242A7154BB00EB89C2 /* StaticHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B64232A7154BB00EB89C2 /* StaticHomeVC.swift */; };
+		189B64262A7159AC00EB89C2 /* HomeVCLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B64252A7159AC00EB89C2 /* HomeVCLabel.swift */; };
+		189B64292A72548900EB89C2 /* RecommendationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B64282A72548900EB89C2 /* RecommendationViewModel.swift */; };
+		189B642C2A7255A100EB89C2 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B642B2A7255A100EB89C2 /* NetworkService.swift */; };
+		189B642F2A72588200EB89C2 /* ModelCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B642E2A72588200EB89C2 /* ModelCountry.swift */; };
+		189B64362A729AAD00EB89C2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 189B64352A729AAD00EB89C2 /* Kingfisher */; };
+		189B64392A729ABE00EB89C2 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 189B64382A729ABE00EB89C2 /* Realm */; };
+		189B643B2A729ABE00EB89C2 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 189B643A2A729ABE00EB89C2 /* RealmSwift */; };
+		189B64442A72C00C00EB89C2 /* StaticRecommendationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B64432A72C00C00EB89C2 /* StaticRecommendationVC.swift */; };
+		189B64462A72CDDA00EB89C2 /* RecommendationUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B64452A72CDDA00EB89C2 /* RecommendationUILabel.swift */; };
+		189B64492A72CFF100EB89C2 /* RecommendationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B64482A72CFF100EB89C2 /* RecommendationModel.swift */; };
+		189B644C2A72D17800EB89C2 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B644B2A72D17800EB89C2 /* InfoViewController.swift */; };
+		189B644F2A73ACB700EB89C2 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B644E2A73ACB700EB89C2 /* MainTabBarController.swift */; };
+		189B64522A73AD1300EB89C2 /* HotelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B64512A73AD1300EB89C2 /* HotelViewController.swift */; };
+		189B64562A73AD8700EB89C2 /* FlightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B64552A73AD8700EB89C2 /* FlightsViewController.swift */; };
+		189B64592A73B8A400EB89C2 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B64582A73B8A400EB89C2 /* WebView.swift */; };
+		18B5878C2A6EC96C002815B5 /* InterestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5878B2A6EC96C002815B5 /* InterestCollectionViewCell.swift */; };
+		18B587922A6FB219002815B5 /* RecommendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B587912A6FB219002815B5 /* RecommendationViewController.swift */; };
 		18EEA37F2A6E7C7800355343 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEA37E2A6E7C7800355343 /* LoginButton.swift */; };
 		18EEA3812A6E7C8B00355343 /* LoginAndPasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEA3802A6E7C8B00355343 /* LoginAndPasswordTextField.swift */; };
 		18EEA3852A6E7F3300355343 /* ImageBall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEA3842A6E7F3300355343 /* ImageBall.swift */; };
@@ -21,8 +43,6 @@
 		18EEA39F2A6E8F2E00355343 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEA39E2A6E8F2E00355343 /* AlertHelper.swift */; };
 		18EEA3A22A6E90DF00355343 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEA3A12A6E90DF00355343 /* LoginViewModel.swift */; };
 		18EEA3A62A6E947500355343 /* RealmModelUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEA3A52A6E947500355343 /* RealmModelUsers.swift */; };
-		18EEA3A92A6E9F2F00355343 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 18EEA3A82A6E9F2F00355343 /* Realm */; };
-		18EEA3AB2A6E9F2F00355343 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 18EEA3AA2A6E9F2F00355343 /* RealmSwift */; };
 		18EEA3AF2A6E9FC000355343 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEA3AE2A6E9FC000355343 /* RealmManager.swift */; };
 		18EEA3B12A6EA5B000355343 /* RealmRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEA3B02A6EA5B000355343 /* RealmRegisterViewModel.swift */; };
 		18EEA3B42A6EA65A00355343 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEA3B32A6EA65A00355343 /* HomeViewController.swift */; };
@@ -37,6 +57,25 @@
 		18789EE92A6E6045007BEEC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18789EEB2A6E6045007BEEC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18789EF52A6E6751007BEEC2 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		189B64162A7128C100EB89C2 /* MyTabularClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MyTabularClassifier.mlmodel; sourceTree = "<group>"; };
+		189B641A2A712D5500EB89C2 /* StarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
+		189B641D2A7151A400EB89C2 /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
+		189B64202A71529000EB89C2 /* HomeViewModelML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelML.swift; sourceTree = "<group>"; };
+		189B64232A7154BB00EB89C2 /* StaticHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticHomeVC.swift; sourceTree = "<group>"; };
+		189B64252A7159AC00EB89C2 /* HomeVCLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVCLabel.swift; sourceTree = "<group>"; };
+		189B64282A72548900EB89C2 /* RecommendationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationViewModel.swift; sourceTree = "<group>"; };
+		189B642B2A7255A100EB89C2 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		189B642E2A72588200EB89C2 /* ModelCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCountry.swift; sourceTree = "<group>"; };
+		189B64432A72C00C00EB89C2 /* StaticRecommendationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticRecommendationVC.swift; sourceTree = "<group>"; };
+		189B64452A72CDDA00EB89C2 /* RecommendationUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationUILabel.swift; sourceTree = "<group>"; };
+		189B64482A72CFF100EB89C2 /* RecommendationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationModel.swift; sourceTree = "<group>"; };
+		189B644B2A72D17800EB89C2 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		189B644E2A73ACB700EB89C2 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		189B64512A73AD1300EB89C2 /* HotelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelViewController.swift; sourceTree = "<group>"; };
+		189B64552A73AD8700EB89C2 /* FlightsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsViewController.swift; sourceTree = "<group>"; };
+		189B64582A73B8A400EB89C2 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		18B5878B2A6EC96C002815B5 /* InterestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestCollectionViewCell.swift; sourceTree = "<group>"; };
+		18B587912A6FB219002815B5 /* RecommendationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationViewController.swift; sourceTree = "<group>"; };
 		18EEA37E2A6E7C7800355343 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		18EEA3802A6E7C8B00355343 /* LoginAndPasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAndPasswordTextField.swift; sourceTree = "<group>"; };
 		18EEA3842A6E7F3300355343 /* ImageBall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageBall.swift; sourceTree = "<group>"; };
@@ -57,8 +96,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18EEA3AB2A6E9F2F00355343 /* RealmSwift in Frameworks */,
-				18EEA3A92A6E9F2F00355343 /* Realm in Frameworks */,
+				189B643B2A729ABE00EB89C2 /* RealmSwift in Frameworks */,
+				189B64392A729ABE00EB89C2 /* Realm in Frameworks */,
+				189B64362A729AAD00EB89C2 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +124,9 @@
 		18789EDC2A6E6044007BEEC2 /* TravelWise */ = {
 			isa = PBXGroup;
 			children = (
+				189B642D2A72587400EB89C2 /* ModelCountry */,
+				189B642A2A72558F00EB89C2 /* NetworkService */,
+				189B641C2A71518900EB89C2 /* Extension */,
 				18EEA37B2A6E7C2800355343 /* DesignSystem */,
 				18EEA3AD2A6E9FAD00355343 /* RealmManager */,
 				18EEA3A42A6E945F00355343 /* ModelUsers */,
@@ -91,6 +134,7 @@
 				18789EF12A6E6666007BEEC2 /* Controllers */,
 				18789EF42A6E66BB007BEEC2 /* Support */,
 				18789EEB2A6E6045007BEEC2 /* Info.plist */,
+				189B64162A7128C100EB89C2 /* MyTabularClassifier.mlmodel */,
 			);
 			path = TravelWise;
 			sourceTree = "<group>";
@@ -98,6 +142,11 @@
 		18789EF12A6E6666007BEEC2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				189B64542A73AD6500EB89C2 /* FlightsVC */,
+				189B64502A73AD0100EB89C2 /* HotelVC */,
+				189B644D2A73ACA500EB89C2 /* TabBarVC */,
+				189B644A2A72D16500EB89C2 /* InfoVC */,
+				18B587902A6FB1F1002815B5 /* RecommendationVC */,
 				18EEA3B22A6EA64200355343 /* HomeVC */,
 				18EEA3942A6E854C00355343 /* RegisterVC */,
 				18789EF72A6E69D9007BEEC2 /* LoginVC */,
@@ -132,9 +181,142 @@
 			path = LoginVC;
 			sourceTree = "<group>";
 		};
+		189B64192A712D3F00EB89C2 /* StarRatingView */ = {
+			isa = PBXGroup;
+			children = (
+				189B641A2A712D5500EB89C2 /* StarRatingView.swift */,
+			);
+			path = StarRatingView;
+			sourceTree = "<group>";
+		};
+		189B641C2A71518900EB89C2 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				189B641D2A7151A400EB89C2 /* Extension+String.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		189B641F2A71523600EB89C2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				189B64202A71529000EB89C2 /* HomeViewModelML.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		189B64222A7154A900EB89C2 /* Static */ = {
+			isa = PBXGroup;
+			children = (
+				189B64232A7154BB00EB89C2 /* StaticHomeVC.swift */,
+			);
+			path = Static;
+			sourceTree = "<group>";
+		};
+		189B64272A72546700EB89C2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				189B64282A72548900EB89C2 /* RecommendationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		189B642A2A72558F00EB89C2 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				189B642B2A7255A100EB89C2 /* NetworkService.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		189B642D2A72587400EB89C2 /* ModelCountry */ = {
+			isa = PBXGroup;
+			children = (
+				189B642E2A72588200EB89C2 /* ModelCountry.swift */,
+			);
+			path = ModelCountry;
+			sourceTree = "<group>";
+		};
+		189B64402A72BFC200EB89C2 /* Static */ = {
+			isa = PBXGroup;
+			children = (
+				189B64432A72C00C00EB89C2 /* StaticRecommendationVC.swift */,
+			);
+			path = Static;
+			sourceTree = "<group>";
+		};
+		189B64472A72CFE000EB89C2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				189B64482A72CFF100EB89C2 /* RecommendationModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		189B644A2A72D16500EB89C2 /* InfoVC */ = {
+			isa = PBXGroup;
+			children = (
+				189B644B2A72D17800EB89C2 /* InfoViewController.swift */,
+			);
+			path = InfoVC;
+			sourceTree = "<group>";
+		};
+		189B644D2A73ACA500EB89C2 /* TabBarVC */ = {
+			isa = PBXGroup;
+			children = (
+				189B644E2A73ACB700EB89C2 /* MainTabBarController.swift */,
+			);
+			path = TabBarVC;
+			sourceTree = "<group>";
+		};
+		189B64502A73AD0100EB89C2 /* HotelVC */ = {
+			isa = PBXGroup;
+			children = (
+				189B64512A73AD1300EB89C2 /* HotelViewController.swift */,
+			);
+			path = HotelVC;
+			sourceTree = "<group>";
+		};
+		189B64542A73AD6500EB89C2 /* FlightsVC */ = {
+			isa = PBXGroup;
+			children = (
+				189B64552A73AD8700EB89C2 /* FlightsViewController.swift */,
+			);
+			path = FlightsVC;
+			sourceTree = "<group>";
+		};
+		189B64572A73B89100EB89C2 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				189B64582A73B8A400EB89C2 /* WebView.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		18B5878A2A6EC94B002815B5 /* CollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				18B5878B2A6EC96C002815B5 /* InterestCollectionViewCell.swift */,
+			);
+			path = CollectionCell;
+			sourceTree = "<group>";
+		};
+		18B587902A6FB1F1002815B5 /* RecommendationVC */ = {
+			isa = PBXGroup;
+			children = (
+				189B64472A72CFE000EB89C2 /* Model */,
+				189B64402A72BFC200EB89C2 /* Static */,
+				189B64272A72546700EB89C2 /* ViewModel */,
+				18B587912A6FB219002815B5 /* RecommendationViewController.swift */,
+			);
+			path = RecommendationVC;
+			sourceTree = "<group>";
+		};
 		18EEA37B2A6E7C2800355343 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
+				189B64572A73B89100EB89C2 /* WebView */,
+				189B64192A712D3F00EB89C2 /* StarRatingView */,
 				18EEA39D2A6E8F0D00355343 /* UIAlertController */,
 				18EEA3972A6E87F500355343 /* UILabel */,
 				18EEA3822A6E7ED800355343 /* UIImageView */,
@@ -181,6 +363,8 @@
 			isa = PBXGroup;
 			children = (
 				18EEA3982A6E881000355343 /* RegisterUILabel.swift */,
+				189B64252A7159AC00EB89C2 /* HomeVCLabel.swift */,
+				189B64452A72CDDA00EB89C2 /* RecommendationUILabel.swift */,
 			);
 			path = UILabel;
 			sourceTree = "<group>";
@@ -230,6 +414,9 @@
 		18EEA3B22A6EA64200355343 /* HomeVC */ = {
 			isa = PBXGroup;
 			children = (
+				189B64222A7154A900EB89C2 /* Static */,
+				189B641F2A71523600EB89C2 /* ViewModel */,
+				18B5878A2A6EC94B002815B5 /* CollectionCell */,
 				18EEA3B32A6EA65A00355343 /* HomeViewController.swift */,
 			);
 			path = HomeVC;
@@ -252,8 +439,9 @@
 			);
 			name = TravelWise;
 			packageProductDependencies = (
-				18EEA3A82A6E9F2F00355343 /* Realm */,
-				18EEA3AA2A6E9F2F00355343 /* RealmSwift */,
+				189B64352A729AAD00EB89C2 /* Kingfisher */,
+				189B64382A729ABE00EB89C2 /* Realm */,
+				189B643A2A729ABE00EB89C2 /* RealmSwift */,
 			);
 			productName = TravelWise;
 			productReference = 18789EDA2A6E6044007BEEC2 /* TravelWise.app */;
@@ -284,7 +472,8 @@
 			);
 			mainGroup = 18789ED12A6E6044007BEEC2;
 			packageReferences = (
-				18EEA3A72A6E9F2F00355343 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				189B64342A729AAD00EB89C2 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				189B64372A729ABE00EB89C2 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 18789EDB2A6E6044007BEEC2 /* Products */;
 			projectDirPath = "";
@@ -315,19 +504,38 @@
 				18EEA3AF2A6E9FC000355343 /* RealmManager.swift in Sources */,
 				18EEA3A62A6E947500355343 /* RealmModelUsers.swift in Sources */,
 				18EEA37F2A6E7C7800355343 /* LoginButton.swift in Sources */,
+				18B587922A6FB219002815B5 /* RecommendationViewController.swift in Sources */,
+				189B64522A73AD1300EB89C2 /* HotelViewController.swift in Sources */,
 				18EEA39F2A6E8F2E00355343 /* AlertHelper.swift in Sources */,
+				189B64592A73B8A400EB89C2 /* WebView.swift in Sources */,
+				189B644C2A72D17800EB89C2 /* InfoViewController.swift in Sources */,
 				18EEA3A22A6E90DF00355343 /* LoginViewModel.swift in Sources */,
+				189B64262A7159AC00EB89C2 /* HomeVCLabel.swift in Sources */,
 				18EEA3B42A6EA65A00355343 /* HomeViewController.swift in Sources */,
+				189B64242A7154BB00EB89C2 /* StaticHomeVC.swift in Sources */,
+				189B644F2A73ACB700EB89C2 /* MainTabBarController.swift in Sources */,
+				189B64172A7128C100EB89C2 /* MyTabularClassifier.mlmodel in Sources */,
+				189B641E2A7151A400EB89C2 /* Extension+String.swift in Sources */,
 				18EEA39C2A6E8C2D00355343 /* RegisterViewModel.swift in Sources */,
+				189B64212A71529000EB89C2 /* HomeViewModelML.swift in Sources */,
+				189B64562A73AD8700EB89C2 /* FlightsViewController.swift in Sources */,
+				189B64442A72C00C00EB89C2 /* StaticRecommendationVC.swift in Sources */,
 				18789EDE2A6E6044007BEEC2 /* AppDelegate.swift in Sources */,
+				18B5878C2A6EC96C002815B5 /* InterestCollectionViewCell.swift in Sources */,
 				18789EE02A6E6044007BEEC2 /* SceneDelegate.swift in Sources */,
 				18EEA3962A6E856200355343 /* RegisterViewController.swift in Sources */,
+				189B641B2A712D5500EB89C2 /* StarRatingView.swift in Sources */,
 				18EEA3B62A6EB7F000355343 /* RealmLoginViewModel.swift in Sources */,
 				18EEA3992A6E881000355343 /* RegisterUILabel.swift in Sources */,
 				18EEA3852A6E7F3300355343 /* ImageBall.swift in Sources */,
+				189B642F2A72588200EB89C2 /* ModelCountry.swift in Sources */,
 				18EEA3812A6E7C8B00355343 /* LoginAndPasswordTextField.swift in Sources */,
+				189B64292A72548900EB89C2 /* RecommendationViewModel.swift in Sources */,
 				18789EF62A6E6751007BEEC2 /* LoginVC.swift in Sources */,
+				189B642C2A7255A100EB89C2 /* NetworkService.swift in Sources */,
 				18EEA3B12A6EA5B000355343 /* RealmRegisterViewModel.swift in Sources */,
+				189B64492A72CFF100EB89C2 /* RecommendationModel.swift in Sources */,
+				189B64462A72CDDA00EB89C2 /* RecommendationUILabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,7 +679,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -500,7 +708,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -541,7 +749,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		18EEA3A72A6E9F2F00355343 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		189B64342A729AAD00EB89C2 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		189B64372A729ABE00EB89C2 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
@@ -552,14 +768,19 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		18EEA3A82A6E9F2F00355343 /* Realm */ = {
+		189B64352A729AAD00EB89C2 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 18EEA3A72A6E9F2F00355343 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = 189B64342A729AAD00EB89C2 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		189B64382A729ABE00EB89C2 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 189B64372A729ABE00EB89C2 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = Realm;
 		};
-		18EEA3AA2A6E9F2F00355343 /* RealmSwift */ = {
+		189B643A2A729ABE00EB89C2 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 18EEA3A72A6E9F2F00355343 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			package = 189B64372A729ABE00EB89C2 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
