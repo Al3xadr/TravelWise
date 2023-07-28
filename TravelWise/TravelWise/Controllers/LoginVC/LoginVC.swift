@@ -59,7 +59,7 @@ private extension LoginViewController {
     }
     
     @objc private func handleLogin() {
-        let homeViewController = HomeViewController()
+        let homeViewController = MainTabBarController()
         homeViewController.modalPresentationStyle = .fullScreen
         homeViewController.isModalInPresentation = true
         self.present(homeViewController, animated: true, completion: nil)
