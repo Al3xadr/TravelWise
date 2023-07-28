@@ -14,6 +14,9 @@ final class LoginAndPasswordTextField: UITextField {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.placeholder = placeholder
         borderStyle = .roundedRect
+        self.layer.borderColor = MainColor.color.cgColor
+        self.layer.borderWidth = 1.0
+        self.layer.cornerRadius = 10.0
     }
     
     required init?(coder aDecoder: NSCoder) {

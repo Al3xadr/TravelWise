@@ -27,15 +27,19 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     }()
     
     private let registrationButton: LoginButton = {
-        let button = LoginButton(title: "Регистрация")
+        let button = LoginButton(title: "Create Account")
         button.addTarget(self, action: #selector(handleRegistration), for: .touchUpInside)
         return button
     }()
     
     private let loginButton: LoginButton = {
-        let button = LoginButton(title: "Вход")
+        let button = LoginButton(title: "Sign in")
         button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         return button
+    }()
+    private lazy var backgroundImage: BackgroundImageView = {
+        let backgroundImageView = BackgroundImageView()
+        return backgroundImageView
     }()
     
     override func viewDidLoad() {
@@ -44,10 +48,27 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
 
         setupUI()
         
-
+        let latitude = "51.509865"
+        let longitude = "-0.118092"
+        let classNetwork = NetworkCityData()
+        
+        classNetwork.fetchCountryData(latitude: latitude, longitude: longitude) { result in
+            switch result {
+            case .success(let pages):
+                // Handle the pages dictionary here
+                print("Pages: \(pages.query.pages)")
+            case .failure(let error):
+                // Handle the error here
+                print("Error: \(error)")
+            }
+        }
+        
+        
+        
+        
+        
         
     }
-    
 }
 
 //MARK: - #selector button 
@@ -91,12 +112,19 @@ private extension LoginViewController {
         view.addSubview(passwordTextField)
         view.addSubview(registrationButton)
         view.addSubview(loginButton)
+        view.addSubview(backgroundImage)
         
+        NSLayoutConstraint.activate([
+            backgroundImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            backgroundImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            backgroundImage.topAnchor.constraint(equalTo: view.topAnchor),
+            backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
         NSLayoutConstraint.activate([
             ballImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
             ballImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            ballImage.widthAnchor.constraint(equalToConstant: 100),
-            ballImage.heightAnchor.constraint(equalToConstant: 100),
+            ballImage.widthAnchor.constraint(equalToConstant: 200),
+            ballImage.heightAnchor.constraint(equalToConstant: 200),
         ])
         NSLayoutConstraint.activate([
             emailOrPhoneNumberTextField.topAnchor.constraint(equalTo: ballImage.bottomAnchor, constant: 50),

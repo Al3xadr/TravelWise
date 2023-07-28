@@ -81,13 +81,9 @@ final class RecommendationViewController: UIViewController {
         label.contentMode = .left
         return label
     }()
-    private let infoButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("подробная информация", for: .normal)
+    private let infoButton: LoginButton = {
+        let button = LoginButton(title: "Info")
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .blue
-        button.layer.cornerRadius = 8
-        button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(infoButtonTapped(_:)), for: .touchUpInside)
         return button
     }()

@@ -11,67 +11,73 @@ final class RegisterViewController: UIViewController {
     private let realmManager = RealmManager()
     private let registerViewModel = RegisterViewModel()
     private let firstNameLabel: RegisterLabel = {
-        let label = RegisterLabel(text: "Имя:")
+        let label = RegisterLabel(text: "Name:")
         return label
     }()
     
     private let firstNameTextField:  LoginAndPasswordTextField = {
-        let textField = LoginAndPasswordTextField(placeholder: "Введите ваше имя")
+        let textField = LoginAndPasswordTextField(placeholder: "Enter Name ")
         return textField
     }()
     
     private let lastNameLabel: RegisterLabel = {
-        let label = RegisterLabel(text:"Фамилия:")
+        let label = RegisterLabel(text:"Last Name:")
         return label
     }()
     
     private let lastNameTextField:  LoginAndPasswordTextField = {
-        let textField = LoginAndPasswordTextField(placeholder: "Введите вашу фамилию")
+        let textField = LoginAndPasswordTextField(placeholder: "Enter Last Name:")
         return textField
     }()
     
     private let phoneNumberLabel:  RegisterLabel = {
-        let label = RegisterLabel(text: "Номер телефона:")
+        let label = RegisterLabel(text: "Number phone:")
         return label
     }()
     
     private let phoneNumberTextField: LoginAndPasswordTextField = {
-        let textField = LoginAndPasswordTextField(placeholder: "Введите ваш номер телефона")
+        let textField = LoginAndPasswordTextField(placeholder: "Enter phone Number")
         textField.keyboardType = .phonePad
         return textField
     }()
     
     private let emailLabel:  RegisterLabel = {
-        let label = RegisterLabel(text:"Электронная почта:")
+        let label = RegisterLabel(text:"Mail:")
         return label
     }()
     
     private let emailTextField:  LoginAndPasswordTextField = {
-        let textField = LoginAndPasswordTextField(placeholder: "Введите вашу электронную почту")
+        let textField = LoginAndPasswordTextField(placeholder: "Enter Mail")
         textField.keyboardType = .emailAddress
         return textField
     }()
     
     private let passwordLabel: RegisterLabel = {
-        let label = RegisterLabel(text: "Пароль:")
+        let label = RegisterLabel(text: "Password:")
         return label
     }()
     
     private let passwordTextField: LoginAndPasswordTextField = {
-        let textField = LoginAndPasswordTextField(placeholder:"Введите ваш пароль")
+        let textField = LoginAndPasswordTextField(placeholder:"Enter Password")
         textField.isSecureTextEntry = true
         return textField
     }()
     private let registerButton: LoginButton = {
-        let button = LoginButton(title: "Зарегестрироваться")
+        let button = LoginButton(title: "Register")
         button.addTarget(self, action: #selector(handleRegistration), for: .touchUpInside)
         return button
     }()
-    
+    private let bacgroundCornerView: RoundedCornerView = {
+        let view = RoundedCornerView()
+        view.backgroundColor = .white
+        return view
+    }()
+    private lazy var backgroundImage: BackgroundImageView = {
+        let backgroundImageView = BackgroundImageView()
+        return backgroundImageView
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Регистрация"
-        view.backgroundColor = .white
         setupUI()
     }
 }
@@ -112,8 +118,19 @@ private extension RegisterViewController {
         stackView.alignment = .fill
         stackView.distribution = .fillEqually
         
-        view.addSubview(stackView)
-        view.addSubview(registerButton)
+        view.backgroundColor = MainColor.color
+        
+        view.addSubview(bacgroundCornerView)
+        view.addSubview(backgroundImage)
+        bacgroundCornerView.addSubview(stackView)
+        bacgroundCornerView.addSubview(registerButton)
+        
+        NSLayoutConstraint.activate([
+            bacgroundCornerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            bacgroundCornerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            bacgroundCornerView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
+            bacgroundCornerView.topAnchor.constraint(equalTo: view.topAnchor, constant: 50)
+        ])
         
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
