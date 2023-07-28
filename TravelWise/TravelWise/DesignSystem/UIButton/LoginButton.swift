@@ -13,9 +13,9 @@ final class LoginButton: UIButton {
         
         translatesAutoresizingMaskIntoConstraints = false
         setTitle(title, for: .normal)
-        backgroundColor = UIColor(red: 0.5, green: 0.8, blue: 1.0, alpha: 1.0) // Мягко голубой цвет
-        tintColor = .white // Белый текст
-        layer.cornerRadius = 10 // Радиус закругления краев
+        backgroundColor = MainColor.color
+        tintColor = .white
+        layer.cornerRadius = 10
     }
     
     required init?(coder aDecoder: NSCoder) {

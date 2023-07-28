@@ -13,7 +13,7 @@ final class RecommendationVCLabel: UILabel {
         self.textColor = .black
         self.font = UIFont.systemFont(ofSize: 18.0, weight: .bold)
         self.textAlignment = .center
-        self.layer.borderColor = UIColor.black.cgColor
+        self.layer.borderColor = MainColor.color.cgColor
         self.layer.borderWidth = 1.0
         self.numberOfLines = 0
         self.lineBreakMode = .byWordWrapping

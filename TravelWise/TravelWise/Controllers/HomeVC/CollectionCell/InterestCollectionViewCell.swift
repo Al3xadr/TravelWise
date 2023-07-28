@@ -30,10 +30,12 @@ final class InterestCollectionViewCell: UICollectionViewCell {
     var isSelectedItem: Bool = false {
         didSet {
             if isSelectedItem {
-                cornerView.layer.borderColor = UIColor.black.cgColor
-                label.textColor = .black
+                cornerView.layer.borderColor = MainColor.color.cgColor
+                label.textColor = .white
+                label.backgroundColor = MainColor.color
             } else {
-                cornerView.layer.borderColor = UIColor.white.cgColor
+                cornerView.layer.borderColor = MainColor.color.cgColor
+                label.backgroundColor = .white
                 label.textColor = .black
             }
         }

@@ -11,6 +11,8 @@ final class RegisterLabel: UILabel {
         super.init(frame: .zero)
         self.translatesAutoresizingMaskIntoConstraints = false
         self.text = text
+        self.font =  UIFont.boldSystemFont(ofSize: 16)
+        self.tintColor = .gray
     }
     
     required init?(coder aDecoder: NSCoder) {
