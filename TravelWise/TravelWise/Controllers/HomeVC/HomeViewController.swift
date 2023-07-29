@@ -11,9 +11,14 @@ import CoreML
 final class HomeViewController: UIViewController {
     private let viewModel = HomeViewModelML()
     private let interestsData = ConstantsHomeVC.interestsData
-    // MARK: - UI Elements
+    
     private var selectedRating: Int = 0
     private var selectedInterests: [String] = []
+    // MARK: - UI Elements
+    private let ballImage: ImageBall = {
+        let image = ImageBall()
+        return image
+    }()
     private let interestsLabel: HomeVCLabel = {
         let label = HomeVCLabel(text: " Interests: ")
         return label
@@ -88,7 +93,7 @@ final class HomeViewController: UIViewController {
         return image
     }()
     
-// MARK: - viewDidLoad()
+    // MARK: - viewDidLoad()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -177,6 +182,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 extension HomeViewController {
     func setupUI() {
         view.backgroundColor = .white
+        view.addSubview(ballImage)
         view.addSubview(interestsLabel)
         view.addSubview(interestsCollectionView)
         view.addSubview(interestsCategoriesStackView)
@@ -197,7 +203,13 @@ extension HomeViewController {
             backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         NSLayoutConstraint.activate([
-            interestsLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            ballImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            ballImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            ballImage.widthAnchor.constraint(equalToConstant: 50),
+            ballImage.heightAnchor.constraint(equalToConstant: 50)
+        ])
+        NSLayoutConstraint.activate([
+            interestsLabel.topAnchor.constraint(equalTo: ballImage.bottomAnchor, constant: 10),
             interestsLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20)
         ])
         NSLayoutConstraint.activate([

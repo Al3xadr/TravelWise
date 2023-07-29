@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		184AE9462A755498006B7733 /* StaticURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184AE9452A755498006B7733 /* StaticURL.swift */; };
 		18789EDE2A6E6044007BEEC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18789EDD2A6E6044007BEEC2 /* AppDelegate.swift */; };
 		18789EE02A6E6044007BEEC2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18789EDF2A6E6044007BEEC2 /* SceneDelegate.swift */; };
 		18789EE72A6E6045007BEEC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18789EE62A6E6045007BEEC2 /* Assets.xcassets */; };
@@ -57,6 +58,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		184AE9452A755498006B7733 /* StaticURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticURL.swift; sourceTree = "<group>"; };
 		18789EDA2A6E6044007BEEC2 /* TravelWise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelWise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18789EDD2A6E6044007BEEC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18789EDF2A6E6044007BEEC2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +121,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		184AE9422A75547F006B7733 /* StaticURL */ = {
+			isa = PBXGroup;
+			children = (
+				184AE9452A755498006B7733 /* StaticURL.swift */,
+			);
+			path = StaticURL;
+			sourceTree = "<group>";
+		};
 		18789ED12A6E6044007BEEC2 = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +248,7 @@
 		189B642A2A72558F00EB89C2 /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
+				184AE9422A75547F006B7733 /* StaticURL */,
 				189B642B2A7255A100EB89C2 /* NetworkService.swift */,
 				189B64672A73FE4700EB89C2 /* NetworkCityData.swift */,
 			);
@@ -583,6 +594,7 @@
 				18EEA3962A6E856200355343 /* RegisterViewController.swift in Sources */,
 				189B646A2A73FF4700EB89C2 /* ModelInfoCountry.swift in Sources */,
 				189B641B2A712D5500EB89C2 /* StarRatingView.swift in Sources */,
+				184AE9462A755498006B7733 /* StaticURL.swift in Sources */,
 				18EEA3B62A6EB7F000355343 /* RealmLoginViewModel.swift in Sources */,
 				189B64712A74F81400EB89C2 /* InfoCollectionViewCell.swift in Sources */,
 				18EEA3992A6E881000355343 /* RegisterUILabel.swift in Sources */,

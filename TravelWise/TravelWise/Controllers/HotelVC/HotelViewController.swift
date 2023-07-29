@@ -9,7 +9,7 @@ import UIKit
 final class HotelViewController: UIViewController {
     
     private let webHotel: WebView = {
-        let web = WebView() 
+        let web = WebView()
         return web
     }()
     

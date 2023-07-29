@@ -45,8 +45,8 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         realmLoginViewModel = RealmLoginViewModel(realmManager: realmManager)
-
-        setupUI() 
+        
+        setupUI()
     }
 }
 
@@ -69,17 +69,17 @@ private extension LoginViewController {
             return
         }
         
-        realmLoginViewModel?.loginUser(emailOrPhone: emailOrPhone, password: password)
-        { [weak self] success in
-            if success {
-                let homeViewController = HomeViewController()
-                homeViewController.modalPresentationStyle = .fullScreen
-                homeViewController.isModalInPresentation = true
-                self?.present(homeViewController, animated: true, completion: nil)
-            } else {
-                AlertHelper.showAlert(in: LoginViewController(), withTitle: "Ошибка", message: "Неверный пароль или пользователь не найден")
-            }
-        }
+        /*  realmLoginViewModel?.loginUser(emailOrPhone: emailOrPhone, password: password)
+         { [weak self] success in
+         if success {
+         let homeViewController = HomeViewController()
+         homeViewController.modalPresentationStyle = .fullScreen
+         homeViewController.isModalInPresentation = true
+         self?.present(homeViewController, animated: true, completion: nil)
+         } else {
+         AlertHelper.showAlert(in: LoginViewController(), withTitle: "Ошибка", message: "Неверный пароль или пользователь не найден")
+         }
+         }*/
     }
 }
 //MARK: - setupUI()
