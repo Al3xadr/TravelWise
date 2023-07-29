@@ -17,7 +17,6 @@ final class InfoViewModel {
             switch result {
             case .success(let response):
                 self?.wikipediaResponse = response
-                print(response)
                 completion(nil)
             case .failure(let error):
                 completion(error)

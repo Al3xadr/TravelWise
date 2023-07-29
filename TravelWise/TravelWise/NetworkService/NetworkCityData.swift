@@ -9,9 +9,9 @@ import Foundation
 
 final class NetworkCityData {
     func fetchCountryData(latitude: Double, longitude: Double, completion: @escaping (Result<WikipediaResponse, Error>) -> Void) {
-        let baseUrlString = "https://en.wikipedia.org/w/api.php?ggscoord=\(latitude)%7C\(longitude)&action=query&prop=coordinates%7Cpageimages%7Cpageterms&colimit=50&piprop=thumbnail&pithumbsize=500&pilimit=50&wbptterms=description&generator=geosearch&ggsradius=10000&ggslimit=50&format=json"
+        let baseUrl = WikipediaAPI.baseUrl + WikipediaAPI.ggscoord + "\(latitude)" + WikipediaAPI.c7 + "\(longitude)" + WikipediaAPI.colimit + WikipediaAPI.radius
         
-        guard let url = URL(string: baseUrlString) else {
+        guard let url = URL(string: baseUrl) else {
             completion(.failure(NSError(domain: "Invalid URL", code: 0, userInfo: nil)))
             return
         }

@@ -123,13 +123,9 @@ private extension RecommendationViewController {
 }
 private extension RecommendationViewController {
     @objc private func infoButtonTapped(_ sender: UIButton) {
-        let latitude = viemodel.getLatitude()
-        let longitude = viemodel.getlongitude()
-        print("latitude \(latitude)")
-        print("longitude \(longitude)")
         let nextVC = InfoViewController()
-        nextVC.latitude = latitude
-        nextVC.longitude = longitude
+        nextVC.latitude = viemodel.getLatitude()
+        nextVC.longitude = viemodel.getlongitude()
         nextVC.modalPresentationStyle = .fullScreen 
         present(nextVC, animated: true)
     }
@@ -142,8 +138,7 @@ private extension RecommendationViewController {
             imageView.layer.cornerRadius = 35
             imageView.clipsToBounds = true
             imageView.translatesAutoresizingMaskIntoConstraints = false
-            imageView.widthAnchor.constraint(equalToConstant: 120).isActive = true
-            imageView.heightAnchor.constraint(equalToConstant: 120).isActive = true
+            imageView.widthAnchor.constraint(equalToConstant: 110).isActive = true
             imageStackView.addArrangedSubview(imageView)
         }
     }
