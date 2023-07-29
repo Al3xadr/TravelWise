@@ -7,7 +7,7 @@
 
 import CoreML
 
-class HomeViewModelML {
+final class HomeViewModelML {
     func collectUserData(interests: String, budget: Double, preferredHousing: String, rating: Double) -> String {
         do {
             let config = MLModelConfiguration()

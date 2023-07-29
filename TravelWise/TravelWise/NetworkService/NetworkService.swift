@@ -7,7 +7,7 @@
 
 
 import Foundation
-class CountryAPIService {
+final class CountryAPIService {
     func fetchCountryData(for countryName: String, completion: @escaping (Result<CountryResponse, Error>) -> Void) {
         let baseURLString = "https://restcountries.com/v3.1/name/"
         let url = baseURLString + "\(countryName.lowercased())"

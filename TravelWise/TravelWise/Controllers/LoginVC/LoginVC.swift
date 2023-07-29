@@ -46,28 +46,7 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         realmLoginViewModel = RealmLoginViewModel(realmManager: realmManager)
 
-        setupUI()
-        
-        let latitude = "51.509865"
-        let longitude = "-0.118092"
-        let classNetwork = NetworkCityData()
-        
-        classNetwork.fetchCountryData(latitude: latitude, longitude: longitude) { result in
-            switch result {
-            case .success(let pages):
-                // Handle the pages dictionary here
-                print("Pages: \(pages.query.pages)")
-            case .failure(let error):
-                // Handle the error here
-                print("Error: \(error)")
-            }
-        }
-        
-        
-        
-        
-        
-        
+        setupUI() 
     }
 }
 
@@ -84,7 +63,7 @@ private extension LoginViewController {
         homeViewController.modalPresentationStyle = .fullScreen
         homeViewController.isModalInPresentation = true
         self.present(homeViewController, animated: true, completion: nil)
-       /* guard let emailOrPhone = emailOrPhoneNumberTextField.text,
+        guard let emailOrPhone = emailOrPhoneNumberTextField.text,
               let password = passwordTextField.text else {
             AlertHelper.showAlert(in: self, withTitle: "Ошибка", message: "Пожалуйста, заполните все поля")
             return
@@ -100,7 +79,7 @@ private extension LoginViewController {
             } else {
                 AlertHelper.showAlert(in: LoginViewController(), withTitle: "Ошибка", message: "Неверный пароль или пользователь не найден")
             }
-        }*/
+        }
     }
 }
 //MARK: - setupUI()
