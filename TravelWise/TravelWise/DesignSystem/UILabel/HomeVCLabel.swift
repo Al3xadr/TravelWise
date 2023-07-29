@@ -11,13 +11,10 @@ final class HomeVCLabel: UILabel {
         super.init(frame: .zero)
         self.translatesAutoresizingMaskIntoConstraints = false
         self.text = text
-        self.textColor = .black
         self.font = UIFont.systemFont(ofSize: 18.0, weight: .bold)
         self.textAlignment = .center
-        self.layer.borderColor = UIColor.black.cgColor
-        self.layer.borderWidth = 1.0
-        self.numberOfLines = 1
-        self.lineBreakMode = .byWordWrapping
+        self.tintColor = .gray
+        self.textColor = .darkGray
     }
     
     required init?(coder aDecoder: NSCoder) {

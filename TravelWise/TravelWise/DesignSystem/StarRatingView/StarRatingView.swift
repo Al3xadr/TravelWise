@@ -33,6 +33,7 @@ class RatingStarsView: UIStackView {
             starImageView.translatesAutoresizingMaskIntoConstraints = false
             starImageView.widthAnchor.constraint(equalToConstant: 35).isActive = true
             starImageView.heightAnchor.constraint(equalToConstant: 35).isActive = true
+            starImageView.tintColor = MainColor.color
             starImageView.image = UIImage(systemName: "star") // Use your custom star image for the empty state
             addArrangedSubview(starImageView)
             starImageViews.append(starImageView)

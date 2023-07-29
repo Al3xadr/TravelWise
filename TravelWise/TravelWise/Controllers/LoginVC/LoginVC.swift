@@ -27,27 +27,27 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     }()
     
     private let registrationButton: LoginButton = {
-        let button = LoginButton(title: "Регистрация")
+        let button = LoginButton(title: "Create Account")
         button.addTarget(self, action: #selector(handleRegistration), for: .touchUpInside)
         return button
     }()
     
     private let loginButton: LoginButton = {
-        let button = LoginButton(title: "Вход")
+        let button = LoginButton(title: "Sign in")
         button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         return button
+    }()
+    private lazy var backgroundImage: BackgroundImageView = {
+        let backgroundImageView = BackgroundImageView()
+        return backgroundImageView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         realmLoginViewModel = RealmLoginViewModel(realmManager: realmManager)
-
+        
         setupUI()
-        
-
-        
     }
-    
 }
 
 //MARK: - #selector button 
@@ -63,23 +63,23 @@ private extension LoginViewController {
         homeViewController.modalPresentationStyle = .fullScreen
         homeViewController.isModalInPresentation = true
         self.present(homeViewController, animated: true, completion: nil)
-       /* guard let emailOrPhone = emailOrPhoneNumberTextField.text,
+        guard let emailOrPhone = emailOrPhoneNumberTextField.text,
               let password = passwordTextField.text else {
             AlertHelper.showAlert(in: self, withTitle: "Ошибка", message: "Пожалуйста, заполните все поля")
             return
         }
         
-        realmLoginViewModel?.loginUser(emailOrPhone: emailOrPhone, password: password)
-        { [weak self] success in
-            if success {
-                let homeViewController = HomeViewController()
-                homeViewController.modalPresentationStyle = .fullScreen
-                homeViewController.isModalInPresentation = true
-                self?.present(homeViewController, animated: true, completion: nil)
-            } else {
-                AlertHelper.showAlert(in: LoginViewController(), withTitle: "Ошибка", message: "Неверный пароль или пользователь не найден")
-            }
-        }*/
+        /*  realmLoginViewModel?.loginUser(emailOrPhone: emailOrPhone, password: password)
+         { [weak self] success in
+         if success {
+         let homeViewController = HomeViewController()
+         homeViewController.modalPresentationStyle = .fullScreen
+         homeViewController.isModalInPresentation = true
+         self?.present(homeViewController, animated: true, completion: nil)
+         } else {
+         AlertHelper.showAlert(in: LoginViewController(), withTitle: "Ошибка", message: "Неверный пароль или пользователь не найден")
+         }
+         }*/
     }
 }
 //MARK: - setupUI()
@@ -91,12 +91,19 @@ private extension LoginViewController {
         view.addSubview(passwordTextField)
         view.addSubview(registrationButton)
         view.addSubview(loginButton)
+        view.addSubview(backgroundImage)
         
+        NSLayoutConstraint.activate([
+            backgroundImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            backgroundImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            backgroundImage.topAnchor.constraint(equalTo: view.topAnchor),
+            backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
         NSLayoutConstraint.activate([
             ballImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
             ballImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            ballImage.widthAnchor.constraint(equalToConstant: 100),
-            ballImage.heightAnchor.constraint(equalToConstant: 100),
+            ballImage.widthAnchor.constraint(equalToConstant: 200),
+            ballImage.heightAnchor.constraint(equalToConstant: 200),
         ])
         NSLayoutConstraint.activate([
             emailOrPhoneNumberTextField.topAnchor.constraint(equalTo: ballImage.bottomAnchor, constant: 50),

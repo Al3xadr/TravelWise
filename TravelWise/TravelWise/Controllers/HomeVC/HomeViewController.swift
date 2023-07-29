@@ -11,16 +11,21 @@ import CoreML
 final class HomeViewController: UIViewController {
     private let viewModel = HomeViewModelML()
     private let interestsData = ConstantsHomeVC.interestsData
-    // MARK: - UI Elements
+    
     private var selectedRating: Int = 0
     private var selectedInterests: [String] = []
+    // MARK: - UI Elements
+    private let ballImage: ImageBall = {
+        let image = ImageBall()
+        return image
+    }()
     private let interestsLabel: HomeVCLabel = {
         let label = HomeVCLabel(text: " Interests: ")
         return label
     }()
     private let interestsCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .vertical
+        layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
@@ -54,6 +59,7 @@ final class HomeViewController: UIViewController {
         slider.maximumValue = 10
         slider.translatesAutoresizingMaskIntoConstraints = false
         slider.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
+        slider.tintColor = MainColor.color
         return slider
     }()
     private let housingSegmentedControl: UISegmentedControl = {
@@ -76,18 +82,18 @@ final class HomeViewController: UIViewController {
         return star
     }()
     
-    private let saveButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Получить рекомендацию", for: .normal)
+    private let saveButton: LoginButton = {
+        let button = LoginButton(title: "Take Recomendation")
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .blue
-        button.layer.cornerRadius = 8
-        button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(saveButtonTapped(_:)), for: .touchUpInside)
         return button
     }()
+    private let backgroundImage: BackgroundImageView = {
+        let image = BackgroundImageView()
+        return image
+    }()
     
-// MARK: - viewDidLoad()
+    // MARK: - viewDidLoad()
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -176,6 +182,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 extension HomeViewController {
     func setupUI() {
         view.backgroundColor = .white
+        view.addSubview(ballImage)
         view.addSubview(interestsLabel)
         view.addSubview(interestsCollectionView)
         view.addSubview(interestsCategoriesStackView)
@@ -187,16 +194,29 @@ extension HomeViewController {
         view.addSubview(occupationTextField)
         view.addSubview(starRatingView)
         view.addSubview(saveButton)
+        view.addSubview(backgroundImage)
         
         NSLayoutConstraint.activate([
-            interestsLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            backgroundImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            backgroundImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            backgroundImage.topAnchor.constraint(equalTo: view.topAnchor),
+            backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        NSLayoutConstraint.activate([
+            ballImage.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            ballImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            ballImage.widthAnchor.constraint(equalToConstant: 50),
+            ballImage.heightAnchor.constraint(equalToConstant: 50)
+        ])
+        NSLayoutConstraint.activate([
+            interestsLabel.topAnchor.constraint(equalTo: ballImage.bottomAnchor, constant: 10),
             interestsLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20)
         ])
         NSLayoutConstraint.activate([
             interestsCollectionView.topAnchor.constraint(equalTo: interestsLabel.bottomAnchor, constant: 20),
             interestsCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             interestsCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            interestsCollectionView.heightAnchor.constraint(equalToConstant: 200)
+            interestsCollectionView.heightAnchor.constraint(equalToConstant: 150)
         ])
         NSLayoutConstraint.activate([
             interestsCategoriesStackView.topAnchor.constraint(equalTo: interestsCollectionView.bottomAnchor, constant: 10),

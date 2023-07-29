@@ -81,19 +81,23 @@ final class RecommendationViewController: UIViewController {
         label.contentMode = .left
         return label
     }()
-    private let infoButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("подробная информация", for: .normal)
+    private let infoButton: LoginButton = {
+        let button = LoginButton(title: "Info")
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .blue
-        button.layer.cornerRadius = 8
-        button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(infoButtonTapped(_:)), for: .touchUpInside)
         return button
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        loadDataViewModel()
+        addImagesToStackView()
+        setupUI()
+    }
+}
+
+private extension RecommendationViewController {
+    func loadDataViewModel() {
         viemodel.fetchDataForCountry(countryName: recommendedCountries) { [weak self] error in
                     if let error = error {
                         print("Error: \(error)")
@@ -115,13 +119,14 @@ final class RecommendationViewController: UIViewController {
                         }
                     }
                 }
-        addImagesToStackView()
-        setupUI()
     }
 }
 private extension RecommendationViewController {
     @objc private func infoButtonTapped(_ sender: UIButton) {
         let nextVC = InfoViewController()
+        nextVC.latitude = viemodel.getLatitude()
+        nextVC.longitude = viemodel.getlongitude()
+        nextVC.modalPresentationStyle = .fullScreen 
         present(nextVC, animated: true)
     }
 }
@@ -133,8 +138,7 @@ private extension RecommendationViewController {
             imageView.layer.cornerRadius = 35
             imageView.clipsToBounds = true
             imageView.translatesAutoresizingMaskIntoConstraints = false
-            imageView.widthAnchor.constraint(equalToConstant: 120).isActive = true
-            imageView.heightAnchor.constraint(equalToConstant: 120).isActive = true
+            imageView.widthAnchor.constraint(equalToConstant: 110).isActive = true
             imageStackView.addArrangedSubview(imageView)
         }
     }

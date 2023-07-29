@@ -13,7 +13,7 @@ final class RealmLoginViewModel {
     init(realmManager: RealmManager) {
         self.realmManager = realmManager
     }
-//MARK: - User login and password verification
+    //MARK: - User login and password verification
     func loginUser(emailOrPhone: String, password: String, completion: @escaping (Bool) -> Void) {
         if let user = realmManager.findUserByEmailOrPhoneNumber(emailOrPhoneNumber: emailOrPhone) {
             if user.password == password {
