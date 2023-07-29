@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RecommendationViewModel {
+final class RecommendationViewModel {
     private let networkService = CountryAPIService()
     private var countryData: CountryResponse?
     
@@ -16,7 +16,6 @@ class RecommendationViewModel {
             switch result {
             case .success(let countryData):
                 self?.countryData = countryData
-                print(countryData)
                 completion(nil)
             case .failure(let error):
                 completion(error)
@@ -67,5 +66,13 @@ class RecommendationViewModel {
         } else {
             completion(nil)
         }
+    }
+    func getLatitude() -> Double {
+        let latitude = countryData?.latlng?[0] ?? 0.0
+        return latitude
+    }
+    func getlongitude() -> Double {
+        let longitude = countryData?.latlng?[1] ?? 0.0
+        return longitude
     }
 }

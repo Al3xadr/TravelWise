@@ -7,17 +7,8 @@
 
 import Foundation
 
-/*
- 
- let urlString = "https://en.wikipedia.org/w/api.php?ggscoord=51.509865%7C-0.118092&action=query&prop=coordinates%7Cpageimages%7Cpageterms&colimit=50&piprop=thumbnail&pithumbsize=500&pilimit=50&wbptterms=description&generator=geosearch&ggsradius=10000&ggslimit=50&format=json"
- let latitude = "51.509865"
- let longitude = "-0.118092"
- let urlString = "https://en.wikipedia.org/w/api.php?ggscoord=\(51.509865)%7C\(-0.118092)&action=query&prop=coordinates%7Cpageimages%7Cpageterms&colimit=50&piprop=thumbnail&pithumbsize=500&pilimit=50&wbptterms=description&generator=geosearch&ggsradius=10000&ggslimit=50&format=json"
- */
-
-
-class NetworkCityData {
-    func fetchCountryData(latitude: String, longitude: String, completion: @escaping (Result<WikipediaResponse, Error>) -> Void) {
+final class NetworkCityData {
+    func fetchCountryData(latitude: Double, longitude: Double, completion: @escaping (Result<WikipediaResponse, Error>) -> Void) {
         let baseUrlString = "https://en.wikipedia.org/w/api.php?ggscoord=\(latitude)%7C\(longitude)&action=query&prop=coordinates%7Cpageimages%7Cpageterms&colimit=50&piprop=thumbnail&pithumbsize=500&pilimit=50&wbptterms=description&generator=geosearch&ggsradius=10000&ggslimit=50&format=json"
         
         guard let url = URL(string: baseUrlString) else {
@@ -52,5 +43,5 @@ class NetworkCityData {
         
         task.resume()
     }
-
+    
 }

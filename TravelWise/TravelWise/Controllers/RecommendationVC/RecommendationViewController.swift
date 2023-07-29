@@ -90,6 +90,14 @@ final class RecommendationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        loadDataViewModel()
+        addImagesToStackView()
+        setupUI()
+    }
+}
+
+private extension RecommendationViewController {
+    func loadDataViewModel() {
         viemodel.fetchDataForCountry(countryName: recommendedCountries) { [weak self] error in
                     if let error = error {
                         print("Error: \(error)")
@@ -111,13 +119,18 @@ final class RecommendationViewController: UIViewController {
                         }
                     }
                 }
-        addImagesToStackView()
-        setupUI()
     }
 }
 private extension RecommendationViewController {
     @objc private func infoButtonTapped(_ sender: UIButton) {
+        let latitude = viemodel.getLatitude()
+        let longitude = viemodel.getlongitude()
+        print("latitude \(latitude)")
+        print("longitude \(longitude)")
         let nextVC = InfoViewController()
+        nextVC.latitude = latitude
+        nextVC.longitude = longitude
+        nextVC.modalPresentationStyle = .fullScreen 
         present(nextVC, animated: true)
     }
 }

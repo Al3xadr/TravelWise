@@ -19,7 +19,7 @@ final class RoundedCornerView: UIView {
     
     private func commonInit() {
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.layer.cornerRadius = 10.0 // Задайте желаемый радиус закругления краев
+        self.layer.cornerRadius = 10.0
         self.layer.masksToBounds = true
     }
 }
