@@ -25,7 +25,7 @@ final class InfoViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         
-        collectionView.register(InfoCollectionViewCell.self, forCellWithReuseIdentifier: "InfoCell")
+        collectionView.register(InfoCollectionViewCell.self, forCellWithReuseIdentifier: StaticInfoVC.infoCollectionViewCell)
         
         collectionView.dataSource = self
         return collectionView
@@ -63,7 +63,7 @@ extension InfoViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "InfoCell", for: indexPath) as? InfoCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StaticInfoVC.infoCollectionViewCell, for: indexPath) as? InfoCollectionViewCell
         
         if let page = viewModel.page(at: indexPath.item) {
             let thumbnailURL = URL(string: page.thumbnail?.source ?? "")
