@@ -26,7 +26,7 @@ final class HotelViewController: UIViewController {
 }
 private extension HotelViewController {
     func loadWebHotel() {
-        guard let url = URL(string: "https://www.booking.com") else {return}
+        guard let url = URL(string: StaticHotelVC.url ) else {return}
         let request = URLRequest(url: url)
         webHotel.load(request)
     }

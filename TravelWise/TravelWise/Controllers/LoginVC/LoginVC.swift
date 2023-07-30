@@ -16,24 +16,24 @@ final class LoginViewController: UIViewController, UITextFieldDelegate {
     }()
     
     private let emailOrPhoneNumberTextField: LoginAndPasswordTextField = {
-        let textField = LoginAndPasswordTextField(placeholder: "Почта или телефон:")
+        let textField = LoginAndPasswordTextField(placeholder: StaticLoginVC.mailAndPhone)
         return textField
     }()
     
     private let passwordTextField: LoginAndPasswordTextField = {
-        let textField = LoginAndPasswordTextField(placeholder: "Пароль:")
+        let textField = LoginAndPasswordTextField(placeholder: StaticLoginVC.password)
         textField.isSecureTextEntry = true
         return textField
     }()
     
     private let registrationButton: LoginButton = {
-        let button = LoginButton(title: "Create Account")
+        let button = LoginButton(title: StaticLoginVC.createAccount)
         button.addTarget(self, action: #selector(handleRegistration), for: .touchUpInside)
         return button
     }()
     
     private let loginButton: LoginButton = {
-        let button = LoginButton(title: "Sign in")
+        let button = LoginButton(title: StaticLoginVC.signIn )
         button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         return button
     }()
@@ -65,7 +65,7 @@ private extension LoginViewController {
         self.present(homeViewController, animated: true, completion: nil)
         guard let emailOrPhone = emailOrPhoneNumberTextField.text,
               let password = passwordTextField.text else {
-            AlertHelper.showAlert(in: self, withTitle: "Ошибка", message: "Пожалуйста, заполните все поля")
+            AlertHelper.showAlert(in: self, withTitle: StaticLoginVC.error, message: StaticLoginVC.message)
             return
         }
         

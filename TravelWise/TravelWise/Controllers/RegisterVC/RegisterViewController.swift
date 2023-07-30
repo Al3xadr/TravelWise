@@ -11,59 +11,59 @@ final class RegisterViewController: UIViewController {
     private let realmManager = RealmManager()
     private let registerViewModel = RegisterViewModel()
     private let firstNameLabel: RegisterLabel = {
-        let label = RegisterLabel(text: "Name:")
+        let label = RegisterLabel(text: StaticRegisterVC.name)
         return label
     }()
     
     private let firstNameTextField:  LoginAndPasswordTextField = {
-        let textField = LoginAndPasswordTextField(placeholder: "Enter Name ")
+        let textField = LoginAndPasswordTextField(placeholder: StaticRegisterVC.enterName)
         return textField
     }()
     
     private let lastNameLabel: RegisterLabel = {
-        let label = RegisterLabel(text:"Last Name:")
+        let label = RegisterLabel(text: StaticRegisterVC.lastName)
         return label
     }()
     
     private let lastNameTextField:  LoginAndPasswordTextField = {
-        let textField = LoginAndPasswordTextField(placeholder: "Enter Last Name:")
+        let textField = LoginAndPasswordTextField(placeholder: StaticRegisterVC.enterLastName)
         return textField
     }()
     
     private let phoneNumberLabel:  RegisterLabel = {
-        let label = RegisterLabel(text: "Number phone:")
+        let label = RegisterLabel(text: StaticRegisterVC.numberPhone )
         return label
     }()
     
     private let phoneNumberTextField: LoginAndPasswordTextField = {
-        let textField = LoginAndPasswordTextField(placeholder: "Enter phone Number")
+        let textField = LoginAndPasswordTextField(placeholder: StaticRegisterVC.enterPhoneNumber)
         textField.keyboardType = .phonePad
         return textField
     }()
     
-    private let emailLabel:  RegisterLabel = {
-        let label = RegisterLabel(text:"Mail:")
+    private let emailLabel: RegisterLabel = {
+        let label = RegisterLabel(text: StaticRegisterVC.mail)
         return label
     }()
     
     private let emailTextField:  LoginAndPasswordTextField = {
-        let textField = LoginAndPasswordTextField(placeholder: "Enter Mail")
+        let textField = LoginAndPasswordTextField(placeholder: StaticRegisterVC.enterMail)
         textField.keyboardType = .emailAddress
         return textField
     }()
     
     private let passwordLabel: RegisterLabel = {
-        let label = RegisterLabel(text: "Password:")
+        let label = RegisterLabel(text: StaticRegisterVC.password)
         return label
     }()
     
     private let passwordTextField: LoginAndPasswordTextField = {
-        let textField = LoginAndPasswordTextField(placeholder:"Enter Password")
+        let textField = LoginAndPasswordTextField(placeholder: StaticRegisterVC.enterPassword)
         textField.isSecureTextEntry = true
         return textField
     }()
     private let registerButton: LoginButton = {
-        let button = LoginButton(title: "Register")
+        let button = LoginButton(title: StaticRegisterVC.registerButton)
         button.addTarget(self, action: #selector(handleRegistration), for: .touchUpInside)
         return button
     }()
@@ -90,7 +90,7 @@ extension RegisterViewController {
               let phoneNumber = phoneNumberTextField.text,
               let email = emailTextField.text,
               let password = passwordTextField.text else {
-            AlertHelper.showAlert(in: self, withTitle: "Ошибка", message: "Пожалуйста, заполните все поля")
+            AlertHelper.showAlert(in: self, withTitle: StaticRegisterVC.error, message: StaticRegisterVC.allFields)
             return
         }
         
@@ -103,7 +103,7 @@ extension RegisterViewController {
             homeViewController.isModalInPresentation = true
             present(homeViewController, animated: true, completion: nil)
         } else {
-            AlertHelper.showAlert(in: self, withTitle: "Error", message: "An error occurred during registration.")
+            AlertHelper.showAlert(in: self, withTitle: StaticRegisterVC.error, message: StaticRegisterVC.registration)
         }
     }
 }

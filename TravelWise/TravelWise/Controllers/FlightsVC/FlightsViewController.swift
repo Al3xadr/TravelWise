@@ -26,7 +26,7 @@ final class FlightsViewController: UIViewController {
 }
 private extension FlightsViewController {
     func loadWebFlights() {
-        guard let url = URL(string: "https://www.aviasales.ru") else {return}
+        guard let url = URL(string: StaticFlightsVC.url) else {return}
         let request = URLRequest(url: url)
         webFlights.load(request)
     }

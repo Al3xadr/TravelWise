@@ -40,6 +40,12 @@
 		189B646E2A74F47A00EB89C2 /* InfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B646D2A74F47A00EB89C2 /* InfoViewModel.swift */; };
 		189B64712A74F81400EB89C2 /* InfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B64702A74F81400EB89C2 /* InfoCollectionViewCell.swift */; };
 		189B64792A752F3000EB89C2 /* MyTabularClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 189B64782A752F2F00EB89C2 /* MyTabularClassifier.mlmodel */; };
+		18A922792A768065006F1712 /* StaticLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A922782A768065006F1712 /* StaticLoginVC.swift */; };
+		18A9227C2A768239006F1712 /* StaticRegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A9227B2A768239006F1712 /* StaticRegisterVC.swift */; };
+		18A9227F2A7686AB006F1712 /* StaticInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A9227E2A7686AB006F1712 /* StaticInfoVC.swift */; };
+		18A922842A768751006F1712 /* StaticTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A922832A768751006F1712 /* StaticTabBarVC.swift */; };
+		18A922872A7687CB006F1712 /* StaticHotelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A922862A7687CB006F1712 /* StaticHotelVC.swift */; };
+		18A9228D2A768826006F1712 /* StaticFlightsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A9228C2A768826006F1712 /* StaticFlightsVC.swift */; };
 		18B5878C2A6EC96C002815B5 /* InterestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B5878B2A6EC96C002815B5 /* InterestCollectionViewCell.swift */; };
 		18B587922A6FB219002815B5 /* RecommendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B587912A6FB219002815B5 /* RecommendationViewController.swift */; };
 		18EEA37F2A6E7C7800355343 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EEA37E2A6E7C7800355343 /* LoginButton.swift */; };
@@ -90,6 +96,12 @@
 		189B646D2A74F47A00EB89C2 /* InfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewModel.swift; sourceTree = "<group>"; };
 		189B64702A74F81400EB89C2 /* InfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCollectionViewCell.swift; sourceTree = "<group>"; };
 		189B64782A752F2F00EB89C2 /* MyTabularClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MyTabularClassifier.mlmodel; sourceTree = "<group>"; };
+		18A922782A768065006F1712 /* StaticLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticLoginVC.swift; sourceTree = "<group>"; };
+		18A9227B2A768239006F1712 /* StaticRegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticRegisterVC.swift; sourceTree = "<group>"; };
+		18A9227E2A7686AB006F1712 /* StaticInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticInfoVC.swift; sourceTree = "<group>"; };
+		18A922832A768751006F1712 /* StaticTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticTabBarVC.swift; sourceTree = "<group>"; };
+		18A922862A7687CB006F1712 /* StaticHotelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticHotelVC.swift; sourceTree = "<group>"; };
+		18A9228C2A768826006F1712 /* StaticFlightsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticFlightsVC.swift; sourceTree = "<group>"; };
 		18B5878B2A6EC96C002815B5 /* InterestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestCollectionViewCell.swift; sourceTree = "<group>"; };
 		18B587912A6FB219002815B5 /* RecommendationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationViewController.swift; sourceTree = "<group>"; };
 		18EEA37E2A6E7C7800355343 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
@@ -199,6 +211,7 @@
 		18789EF72A6E69D9007BEEC2 /* LoginVC */ = {
 			isa = PBXGroup;
 			children = (
+				18A922772A768050006F1712 /* StaticLoginVC */,
 				18EEA3A02A6E90C700355343 /* LoginViewModel */,
 				18789EF52A6E6751007BEEC2 /* LoginVC.swift */,
 			);
@@ -283,6 +296,7 @@
 		189B644A2A72D16500EB89C2 /* InfoVC */ = {
 			isa = PBXGroup;
 			children = (
+				18A9227D2A76869B006F1712 /* StaticInfoVC */,
 				189B646F2A74F7FB00EB89C2 /* InfoCollectionViewCell */,
 				189B646C2A74F46200EB89C2 /* ViewModel */,
 				189B644B2A72D17800EB89C2 /* InfoViewController.swift */,
@@ -293,6 +307,7 @@
 		189B644D2A73ACA500EB89C2 /* TabBarVC */ = {
 			isa = PBXGroup;
 			children = (
+				18A922802A76870D006F1712 /* StaticTabBarVC */,
 				189B644E2A73ACB700EB89C2 /* MainTabBarController.swift */,
 			);
 			path = TabBarVC;
@@ -301,6 +316,7 @@
 		189B64502A73AD0100EB89C2 /* HotelVC */ = {
 			isa = PBXGroup;
 			children = (
+				18A922852A7687B4006F1712 /* StaticHotelVC */,
 				189B64512A73AD1300EB89C2 /* HotelViewController.swift */,
 			);
 			path = HotelVC;
@@ -309,6 +325,7 @@
 		189B64542A73AD6500EB89C2 /* FlightsVC */ = {
 			isa = PBXGroup;
 			children = (
+				18A9228B2A76881D006F1712 /* StaticFlightsVC */,
 				189B64552A73AD8700EB89C2 /* FlightsViewController.swift */,
 			);
 			path = FlightsVC;
@@ -352,6 +369,54 @@
 				189B64702A74F81400EB89C2 /* InfoCollectionViewCell.swift */,
 			);
 			path = InfoCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		18A922772A768050006F1712 /* StaticLoginVC */ = {
+			isa = PBXGroup;
+			children = (
+				18A922782A768065006F1712 /* StaticLoginVC.swift */,
+			);
+			path = StaticLoginVC;
+			sourceTree = "<group>";
+		};
+		18A9227A2A76821C006F1712 /* StaticRegisterVC */ = {
+			isa = PBXGroup;
+			children = (
+				18A9227B2A768239006F1712 /* StaticRegisterVC.swift */,
+			);
+			path = StaticRegisterVC;
+			sourceTree = "<group>";
+		};
+		18A9227D2A76869B006F1712 /* StaticInfoVC */ = {
+			isa = PBXGroup;
+			children = (
+				18A9227E2A7686AB006F1712 /* StaticInfoVC.swift */,
+			);
+			path = StaticInfoVC;
+			sourceTree = "<group>";
+		};
+		18A922802A76870D006F1712 /* StaticTabBarVC */ = {
+			isa = PBXGroup;
+			children = (
+				18A922832A768751006F1712 /* StaticTabBarVC.swift */,
+			);
+			path = StaticTabBarVC;
+			sourceTree = "<group>";
+		};
+		18A922852A7687B4006F1712 /* StaticHotelVC */ = {
+			isa = PBXGroup;
+			children = (
+				18A922862A7687CB006F1712 /* StaticHotelVC.swift */,
+			);
+			path = StaticHotelVC;
+			sourceTree = "<group>";
+		};
+		18A9228B2A76881D006F1712 /* StaticFlightsVC */ = {
+			isa = PBXGroup;
+			children = (
+				18A9228C2A768826006F1712 /* StaticFlightsVC.swift */,
+			);
+			path = StaticFlightsVC;
 			sourceTree = "<group>";
 		};
 		18B5878A2A6EC94B002815B5 /* CollectionCell */ = {
@@ -417,6 +482,7 @@
 		18EEA3942A6E854C00355343 /* RegisterVC */ = {
 			isa = PBXGroup;
 			children = (
+				18A9227A2A76821C006F1712 /* StaticRegisterVC */,
 				18EEA39A2A6E8C1A00355343 /* RegisterViewModel */,
 				18EEA3952A6E856200355343 /* RegisterViewController.swift */,
 			);
@@ -569,12 +635,15 @@
 				18EEA3A62A6E947500355343 /* RealmModelUsers.swift in Sources */,
 				18EEA37F2A6E7C7800355343 /* LoginButton.swift in Sources */,
 				189B64602A73D87F00EB89C2 /* BackgroundImage.swift in Sources */,
+				18A9228D2A768826006F1712 /* StaticFlightsVC.swift in Sources */,
 				18B587922A6FB219002815B5 /* RecommendationViewController.swift in Sources */,
 				189B64522A73AD1300EB89C2 /* HotelViewController.swift in Sources */,
 				18EEA39F2A6E8F2E00355343 /* AlertHelper.swift in Sources */,
 				189B64592A73B8A400EB89C2 /* WebView.swift in Sources */,
+				18A9227F2A7686AB006F1712 /* StaticInfoVC.swift in Sources */,
 				189B644C2A72D17800EB89C2 /* InfoViewController.swift in Sources */,
 				18EEA3A22A6E90DF00355343 /* LoginViewModel.swift in Sources */,
+				18A922872A7687CB006F1712 /* StaticHotelVC.swift in Sources */,
 				189B64262A7159AC00EB89C2 /* HomeVCLabel.swift in Sources */,
 				189B64682A73FE4700EB89C2 /* NetworkCityData.swift in Sources */,
 				18EEA3B42A6EA65A00355343 /* HomeViewController.swift in Sources */,
@@ -585,6 +654,7 @@
 				189B641E2A7151A400EB89C2 /* Extension+String.swift in Sources */,
 				18EEA39C2A6E8C2D00355343 /* RegisterViewModel.swift in Sources */,
 				189B64792A752F3000EB89C2 /* MyTabularClassifier.mlmodel in Sources */,
+				18A922842A768751006F1712 /* StaticTabBarVC.swift in Sources */,
 				189B64212A71529000EB89C2 /* HomeViewModelML.swift in Sources */,
 				189B64562A73AD8700EB89C2 /* FlightsViewController.swift in Sources */,
 				189B64442A72C00C00EB89C2 /* StaticRecommendationVC.swift in Sources */,
@@ -593,6 +663,7 @@
 				18789EE02A6E6044007BEEC2 /* SceneDelegate.swift in Sources */,
 				18EEA3962A6E856200355343 /* RegisterViewController.swift in Sources */,
 				189B646A2A73FF4700EB89C2 /* ModelInfoCountry.swift in Sources */,
+				18A9227C2A768239006F1712 /* StaticRegisterVC.swift in Sources */,
 				189B641B2A712D5500EB89C2 /* StarRatingView.swift in Sources */,
 				184AE9462A755498006B7733 /* StaticURL.swift in Sources */,
 				18EEA3B62A6EB7F000355343 /* RealmLoginViewModel.swift in Sources */,
@@ -601,6 +672,7 @@
 				18EEA3852A6E7F3300355343 /* ImageBall.swift in Sources */,
 				189B642F2A72588200EB89C2 /* ModelCountry.swift in Sources */,
 				18EEA3812A6E7C8B00355343 /* LoginAndPasswordTextField.swift in Sources */,
+				18A922792A768065006F1712 /* StaticLoginVC.swift in Sources */,
 				189B64292A72548900EB89C2 /* RecommendationViewModel.swift in Sources */,
 				18789EF62A6E6751007BEEC2 /* LoginVC.swift in Sources */,
 				189B642C2A7255A100EB89C2 /* NetworkService.swift in Sources */,

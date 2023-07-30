@@ -82,7 +82,7 @@ final class RecommendationViewController: UIViewController {
         return label
     }()
     private let infoButton: LoginButton = {
-        let button = LoginButton(title: "Info")
+        let button = LoginButton(title: StaticRecommendationVC.info)
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(infoButtonTapped(_:)), for: .touchUpInside)
         return button

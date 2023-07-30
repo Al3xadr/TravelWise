@@ -10,7 +10,7 @@ import MultiSlider
 import CoreML
 final class HomeViewController: UIViewController {
     private let viewModel = HomeViewModelML()
-    private let interestsData = ConstantsHomeVC.interestsData
+    private let interestsData = StaticHomeVC.interestsData
     
     private var selectedRating: Int = 0
     private var selectedInterests: [String] = []
@@ -20,7 +20,7 @@ final class HomeViewController: UIViewController {
         return image
     }()
     private let interestsLabel: HomeVCLabel = {
-        let label = HomeVCLabel(text: " Interests: ")
+        let label = HomeVCLabel(text: StaticHomeVC.interests)
         return label
     }()
     private let interestsCollectionView: UICollectionView = {
@@ -31,17 +31,17 @@ final class HomeViewController: UIViewController {
         return collectionView
     }()
     private let budgetLabel: HomeVCLabel = {
-        let label = HomeVCLabel(text: " Budget: ")
+        let label = HomeVCLabel(text: StaticHomeVC.budget )
         return label
     }()
     
     private let housingLabel: HomeVCLabel = {
-        let label = HomeVCLabel(text: " Preferred Housing: ")
+        let label = HomeVCLabel(text: StaticHomeVC.preferredHousing)
         return label
     }()
     
     private let occupationLabel: HomeVCLabel = {
-        let label = HomeVCLabel(text: " Occupation: ")
+        let label = HomeVCLabel(text: StaticHomeVC.occupation)
         return label
     }()
     
@@ -63,7 +63,7 @@ final class HomeViewController: UIViewController {
         return slider
     }()
     private let housingSegmentedControl: UISegmentedControl = {
-        let items = ConstantsHomeVC.itemsSegmentedControl
+        let items = StaticHomeVC.itemsSegmentedControl
         let segmentedControl = UISegmentedControl(items: items)
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
@@ -71,7 +71,7 @@ final class HomeViewController: UIViewController {
     }()
     
     private let occupationTextField: LoginAndPasswordTextField = {
-        let textField = LoginAndPasswordTextField(placeholder: "Job or travel")
+        let textField = LoginAndPasswordTextField(placeholder: StaticHomeVC.jobOrTravel)
         return textField
     }()
     private let starRatingView: RatingStarsView = {
@@ -83,7 +83,7 @@ final class HomeViewController: UIViewController {
     }()
     
     private let saveButton: LoginButton = {
-        let button = LoginButton(title: "Take Recomendation")
+        let button = LoginButton(title: StaticHomeVC.recomendation)
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(saveButtonTapped(_:)), for: .touchUpInside)
         return button
@@ -143,7 +143,7 @@ private extension HomeViewController {
         interestsCollectionView.translatesAutoresizingMaskIntoConstraints = false
         interestsCollectionView.dataSource = self
         interestsCollectionView.delegate = self
-        interestsCollectionView.register(InterestCollectionViewCell.self, forCellWithReuseIdentifier: "InterestCell")
+        interestsCollectionView.register(InterestCollectionViewCell.self, forCellWithReuseIdentifier: HomeCell.InterestCell)
     }
     
 }
@@ -159,7 +159,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         return CGSize(width: textWidth, height: textHeight + 20)
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "InterestCell", for: indexPath) as! InterestCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCell.InterestCell, for: indexPath) as! InterestCollectionViewCell
         let interest = interestsData[indexPath.item]
         cell.configure(with: interest)
         cell.isSelectedItem = selectedInterests.contains(interest)
