@@ -7,7 +7,7 @@
 
 import UIKit
 final class InterestCollectionViewCell: UICollectionViewCell {
-    
+
     private let cornerView: UIView = {
        let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -26,7 +26,6 @@ final class InterestCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    // Property to store the selected state for each cell
     var isSelectedItem: Bool = false {
         didSet {
             if isSelectedItem {

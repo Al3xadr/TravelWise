@@ -20,9 +20,9 @@ extension MainTabBarController {
         let flightsVC = FlightsViewController()
         let bookingNavController = UINavigationController(rootViewController: homeVC)
         self.viewControllers = [homeVC, hotelVC, flightsVC]
-        homeVC.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "globe.europe.africa"), tag: 0)
-        hotelVC.tabBarItem = UITabBarItem(title: "Booking", image: UIImage(systemName: "house"), tag: 1)
-        flightsVC.tabBarItem = UITabBarItem(title: "Flights", image: UIImage(systemName: "airplane.circle"), tag: 2)
+        homeVC.tabBarItem = UITabBarItem(title: StaticTabBarVC.home, image: UIImage(systemName: "globe.europe.africa"), tag: 0)
+        hotelVC.tabBarItem = UITabBarItem(title: StaticTabBarVC.booking, image: UIImage(systemName: "house"), tag: 1)
+        flightsVC.tabBarItem = UITabBarItem(title: StaticTabBarVC.flights, image: UIImage(systemName: "airplane.circle"), tag: 2)
         let tabBarAppearance = UITabBarAppearance()
         tabBarAppearance.stackedLayoutAppearance.selected.titleTextAttributes = [.foregroundColor: MainColor.color]
         tabBarAppearance.stackedLayoutAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.gray]
